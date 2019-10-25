@@ -9,8 +9,8 @@ namespace WindowsFormsSamosval
 {
     public class SamosvalCar
     {
-        private float _startPosX;
-        private float _startPosY;
+        public static float _startPosX;
+        public static float _startPosY;
         private int _pictureWidth;
         private int _pictureHeight;
         private const int carWidth = 100;
