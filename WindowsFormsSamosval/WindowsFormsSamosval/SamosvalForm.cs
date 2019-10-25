@@ -29,7 +29,7 @@ namespace WindowsFormsSamosval
         private void buttonStart_Click(object sender, EventArgs e)
         {
             Random rnd = new Random();
-            car = new SamosvalCar(rnd.Next(100, 300), rnd.Next(1000, 2000), Color.Blue);
+            car = new SamosvalCar(rnd.Next(100, 300), rnd.Next(1000, 2000), Color.Blue, Color.Black);
             car.SetPosition(rnd.Next(20, 100), rnd.Next(100, 100), pictureBoxSamosval.Width,
            pictureBoxSamosval.Height);
             Draw();
