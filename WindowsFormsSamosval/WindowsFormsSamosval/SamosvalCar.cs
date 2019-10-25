@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WindowsFormSamosval;
 
 namespace WindowsFormsSamosval
 {
@@ -95,6 +96,8 @@ namespace WindowsFormsSamosval
             //Труба 
             g.FillRectangle(brush, _startPosX + 63, _startPosY - 60, 5, 35  );
 
+            DrawKolesa drawGuns = new DrawKolesa(Kolesa.Four, _startPosX, _startPosY);
+            drawGuns.KolesaDraw(g);
 
 
             /*
