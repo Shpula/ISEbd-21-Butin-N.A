@@ -29,9 +29,8 @@ namespace WindowsFormsSamosval
         private void buttonStart_Click(object sender, EventArgs e)
         {
             Random rnd = new Random();
-            car = new SamosvalCar(rnd.Next(100, 300), rnd.Next(1000, 2000), Color.Blue,
-           Color.Yellow, true, true);
-            car.SetPosition(rnd.Next(10, 100), rnd.Next(10, 100), pictureBoxSamosval.Width,
+            car = new SamosvalCar(rnd.Next(100, 300), rnd.Next(1000, 2000), Color.Blue);
+            car.SetPosition(rnd.Next(20, 100), rnd.Next(100, 100), pictureBoxSamosval.Width,
            pictureBoxSamosval.Height);
             Draw();
         }
@@ -55,6 +54,16 @@ namespace WindowsFormsSamosval
                     car.MoveTransport(Direction.Right);
                     break;
             }
+            Draw();
+        }
+
+        private void buttonCreateSuperSamosval_Click(object sender, EventArgs e)
+        {
+            Random rnd = new Random();
+            car = new SuperSamosval(rnd.Next(100, 300), rnd.Next(1000, 2000), Color.Blue,
+           Color.Yellow, true, true);
+            car.SetPosition(rnd.Next(20, 100), rnd.Next(100, 100), pictureBoxSamosval.Width,
+           pictureBoxSamosval.Height);
             Draw();
         }
     }

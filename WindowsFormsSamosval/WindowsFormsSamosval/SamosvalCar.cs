@@ -7,38 +7,22 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsSamosval
 {
-    public class SamosvalCar
+    public class SamosvalCar : Vehicle
     {
-        private float _startPosX;
-        private float _startPosY;
-        private int _pictureWidth;
-        private int _pictureHeight;
         private const int carWidth = 100;
         private const int carHeight = 60;
-        public int MaxSpeed { private set; get; }
-        public float Weight { private set; get; }
-        public Color MainColor { private set; get; }
         public Color DopColor { private set; get; }
         public bool MainPipe { private set; get; }
         public bool Container { private set; get; }
-        public SamosvalCar(int maxSpeed, float weight, Color mainColor, Color dopColor, bool mainPipe
-            , bool container)
+   
+        public SamosvalCar(int maxSpeed, float weight, Color mainColor)
         {
             MaxSpeed = maxSpeed;
             Weight = weight;
             MainColor = mainColor;
-            DopColor = dopColor;
-            MainPipe = mainPipe;
-            Container = container;
         }
-        public void SetPosition(int x, int y, int width, int height)
-        {
-            _startPosX = x;
-            _startPosY = y;
-            _pictureWidth = width;
-            _pictureHeight = height;
-        }
-        public void MoveTransport(Direction direction)
+
+        public override void MoveTransport(Direction direction)
         {
             float step = MaxSpeed * 100 / Weight;
             switch (direction)
@@ -73,7 +57,7 @@ namespace WindowsFormsSamosval
                     break;
             }
         }
-        public void DrawCar(Graphics g)
+        public override     void DrawCar(Graphics g)
         {
             Pen pen = new Pen(Color.Black);
             Brush brush = new SolidBrush(Color.Black);
@@ -90,21 +74,7 @@ namespace WindowsFormsSamosval
             g.FillRectangle(brush1, _startPosX + 65, _startPosY - 30, 50, 30);
             //Стекло
             g.FillRectangle(brush, _startPosX + 85, _startPosY - 45, 10, 15);
-            //Контейнер
-            g.FillRectangle(brush1, _startPosX - 5, _startPosY - 50, 60, 40);
-            //Труба 
-            g.FillRectangle(brush, _startPosX + 63, _startPosY - 60, 5, 35  );
-
-
-
-            /*
-            if (MainPipe)
-            {
-                Brush pipe = new SolidBrush(DopColor);
-                g.FillRectangle(pipe, _startPosX - 5, _startPosY, 10, 50);
-                g.DrawRectangle(pen, _startPosX - 5, _startPosY, 10, 50);
-            }
-            */
+        
         }
     }
 }

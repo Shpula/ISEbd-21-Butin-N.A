@@ -34,6 +34,7 @@
             this.buttonRight = new System.Windows.Forms.Button();
             this.buttonUp = new System.Windows.Forms.Button();
             this.pictureBoxSamosval = new System.Windows.Forms.PictureBox();
+            this.buttonCreateSuperSamosval = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSamosval)).BeginInit();
             this.SuspendLayout();
             // 
@@ -99,13 +100,23 @@
             this.pictureBoxSamosval.Size = new System.Drawing.Size(878, 544);
             this.pictureBoxSamosval.TabIndex = 1;
             this.pictureBoxSamosval.TabStop = false;
-           // this.pictureBoxSamosval.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // buttonCreateSuperSamosval
+            // 
+            this.buttonCreateSuperSamosval.Location = new System.Drawing.Point(250, 12);
+            this.buttonCreateSuperSamosval.Name = "buttonCreateSuperSamosval";
+            this.buttonCreateSuperSamosval.Size = new System.Drawing.Size(249, 41);
+            this.buttonCreateSuperSamosval.TabIndex = 7;
+            this.buttonCreateSuperSamosval.Text = "Начать круто самосвалить";
+            this.buttonCreateSuperSamosval.UseVisualStyleBackColor = true;
+            this.buttonCreateSuperSamosval.Click += new System.EventHandler(this.buttonCreateSuperSamosval_Click);
             // 
             // SamosvalForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(878, 544);
+            this.Controls.Add(this.buttonCreateSuperSamosval);
             this.Controls.Add(this.buttonRight);
             this.Controls.Add(this.buttonLeft);
             this.Controls.Add(this.buttonDown);
@@ -115,7 +126,6 @@
             this.Name = "SamosvalForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
-            //this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSamosval)).EndInit();
             this.ResumeLayout(false);
 
@@ -129,6 +139,7 @@
         private System.Windows.Forms.Button buttonDown;
         private System.Windows.Forms.Button buttonLeft;
         private System.Windows.Forms.Button buttonRight;
+        private System.Windows.Forms.Button buttonCreateSuperSamosval;
     }
 }
 
