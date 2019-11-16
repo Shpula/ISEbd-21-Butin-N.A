@@ -6,6 +6,7 @@ using System.Windows.Forms;
 
 namespace WindowsFormsSamosval
 {
+    public delegate void carDelegate(ITransport car);
     static class Program
     {
         /// <summary>

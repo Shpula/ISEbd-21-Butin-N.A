@@ -65,16 +65,16 @@ namespace WindowsFormsSamosval
             Brush mainBrush = new SolidBrush(MainColor);
 
             //Колёса
-            g.FillEllipse(dopBrush, _startPosX, _startPosY + 40, 20, 20);
-            g.FillEllipse(dopBrush, _startPosX + 30, _startPosY + 40, 20, 20);
-            g.FillEllipse(dopBrush, _startPosX + 60, _startPosY + 40, 20, 20);
-            g.FillEllipse(dopBrush, _startPosX + 90, _startPosY + 40, 20, 20);
+            g.FillEllipse(dopBrush, _startPosX, _startPosY + 50, 20, 20);
+            g.FillEllipse(dopBrush, _startPosX + 30, _startPosY + 50, 20, 20);
+            g.FillEllipse(dopBrush, _startPosX + 60, _startPosY + 50, 20, 20);
+            g.FillEllipse(dopBrush, _startPosX + 90, _startPosY + 50, 20, 20);
             //Кузов
-            g.FillRectangle(mainBrush, _startPosX, _startPosY - 15 + 40, 115, 15);
-            g.FillRectangle(mainBrush, _startPosX + 65, _startPosY - 50 + 40, 30, 50);
-            g.FillRectangle(mainBrush, _startPosX + 65, _startPosY - 30 + 40, 50, 30);
+            g.FillRectangle(mainBrush, _startPosX, _startPosY - 15 + 50, 115, 15);
+            g.FillRectangle(mainBrush, _startPosX + 65, _startPosY - 50 + 50, 30, 50);
+            g.FillRectangle(mainBrush, _startPosX + 65, _startPosY - 30 + 50, 50, 30);
             //Стекло
-            g.FillRectangle(dopBrush, _startPosX + 85, _startPosY - 45 + 40 ,10, 15);
+            g.FillRectangle(dopBrush, _startPosX + 85, _startPosY - 45 + 50, 10, 15);
         
         }
     }
