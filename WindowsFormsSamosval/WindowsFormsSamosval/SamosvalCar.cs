@@ -11,16 +11,23 @@ namespace WindowsFormsSamosval
     {
         private const int carWidth = 100;
         private const int carHeight = 60;
-        public Color DopColor { private set; get; }
-        public bool MainPipe { private set; get; }
-        public bool Container { private set; get; }
    
         public SamosvalCar(int maxSpeed, float weight, Color mainColor, Color dopColor)
         {
             MaxSpeed = maxSpeed;
             Weight = weight;
             MainColor = mainColor;
-            DopColor = dopColor;
+        }
+
+        public SamosvalCar(string info)
+        {
+            string[] strs = info.Split(';');
+            if (strs.Length == 3)
+            {
+                MaxSpeed = Convert.ToInt32(strs[0]);
+                Weight = Convert.ToInt32(strs[1]);
+                MainColor = Color.FromName(strs[2]);
+            }
         }
 
         public override void MoveTransport(Direction direction)
@@ -61,7 +68,7 @@ namespace WindowsFormsSamosval
         public override void DrawCar(Graphics g)
         {
             Pen pen = new Pen(Color.Black);
-            Brush dopBrush = new SolidBrush(DopColor);
+            Brush dopBrush = new SolidBrush(Color.Black);
             Brush mainBrush = new SolidBrush(MainColor);
 
             //Колёса
@@ -76,6 +83,11 @@ namespace WindowsFormsSamosval
             //Стекло
             g.FillRectangle(dopBrush, _startPosX + 85, _startPosY - 45 + 50, 10, 15);
         
+        }
+
+        public override string ToString()
+        {
+            return MaxSpeed + ";" + Weight + ";" + MainColor.Name;
         }
     }
 }

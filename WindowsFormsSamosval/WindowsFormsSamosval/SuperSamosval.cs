@@ -10,7 +10,6 @@ namespace WindowsFormsSamosval
     class SuperSamosval : SamosvalCar
     {
         public Color DopColor { private set; get; }
-        public Color MainColor { private set; get; }
         public bool MainPipe { private set; get; }
         public bool Container { private set; get; }
 
@@ -23,6 +22,19 @@ namespace WindowsFormsSamosval
             MainPipe = mainPipe;
             Container = container;
         }
+
+        public SuperSamosval(string info) : base(info)
+        {
+            string[] strs = info.Split(';');
+            if (strs.Length == 4)
+            {
+                MaxSpeed = Convert.ToInt32(strs[0]);
+                Weight = Convert.ToInt32(strs[1]);
+                MainColor = Color.FromName(strs[2]);
+                DopColor = Color.FromName(strs[3]);
+            }
+        }
+
         public override void DrawCar(Graphics g)
         {
             Pen pen = new Pen(Color.Black);
@@ -46,6 +58,10 @@ namespace WindowsFormsSamosval
         public void SetDopColor(Color color)
         {
             DopColor = color;
+        }
+        public override string ToString()
+        {
+            return base.ToString() + ";" + DopColor.Name;
         }
     }
 }
