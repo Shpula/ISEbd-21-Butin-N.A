@@ -97,17 +97,6 @@ namespace WindowsFormsSamosval
             g.FillRectangle(brush, _startPosX + 63, _startPosY - 60, 5, 35  );
 
             DrawKolesa drawGuns = new DrawKolesa(Kolesa.Four, _startPosX, _startPosY);
-            drawGuns.KolesaDraw(g);
-
-
-            /*
-            if (MainPipe)
-            {
-                Brush pipe = new SolidBrush(DopColor);
-                g.FillRectangle(pipe, _startPosX - 5, _startPosY, 10, 50);
-                g.DrawRectangle(pen, _startPosX - 5, _startPosY, 10, 50);
-            }
-            */
         }
     }
 }
