@@ -94,17 +94,6 @@ namespace WindowsFormsSamosval
             g.FillRectangle(brush1, _startPosX - 5, _startPosY - 50, 60, 40);
             //Труба 
             g.FillRectangle(brush, _startPosX + 63, _startPosY - 60, 5, 35  );
-
-
-
-            /*
-            if (MainPipe)
-            {
-                Brush pipe = new SolidBrush(DopColor);
-                g.FillRectangle(pipe, _startPosX - 5, _startPosY, 10, 50);
-                g.DrawRectangle(pen, _startPosX - 5, _startPosY, 10, 50);
-            }
-            */
         }
     }
 }

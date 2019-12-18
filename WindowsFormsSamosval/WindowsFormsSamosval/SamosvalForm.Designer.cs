@@ -99,7 +99,6 @@
             this.pictureBoxSamosval.Size = new System.Drawing.Size(878, 544);
             this.pictureBoxSamosval.TabIndex = 1;
             this.pictureBoxSamosval.TabStop = false;
-           // this.pictureBoxSamosval.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // SamosvalForm
             // 
@@ -115,7 +114,6 @@
             this.Name = "SamosvalForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
-            //this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSamosval)).EndInit();
             this.ResumeLayout(false);
 
