@@ -36,9 +36,6 @@ namespace WindowsFormsSamosval
         /// <summary>
         /// Конструктор
         /// </summary>
-        /// <param name="sizes">Количество мест на парковке</param>
-        /// <param name="pictureWidth">Рамзер парковки - ширина</param>
-        /// <param name="pictureHeight">Рамзер парковки - высота</param>
         public Parking(int sizes, int pictureWidth, int pictureHeight)
         {
             _places = new T[sizes];
