@@ -17,7 +17,6 @@ namespace WindowsFormsSamosval
        bool mainPipe, bool container) :
         base(maxSpeed, weight, mainColor, dopColor)
         {
-            MainColor = mainColor;
             DopColor = dopColor;
             MainPipe = mainPipe;
             Container = container;
@@ -26,20 +25,20 @@ namespace WindowsFormsSamosval
         public SuperSamosval(string info) : base(info)
         {
             string[] strs = info.Split(';');
-            if (strs.Length == 4)
+            if (strs.Length == 6)
             {
                 MaxSpeed = Convert.ToInt32(strs[0]);
                 Weight = Convert.ToInt32(strs[1]);
                 MainColor = Color.FromName(strs[2]);
                 DopColor = Color.FromName(strs[3]);
+                Container = Convert.ToBoolean(strs[4]);
+                MainPipe = Convert.ToBoolean(strs[5]);
             }
         }
 
         public override void DrawCar(Graphics g)
         {
-            Pen pen = new Pen(Color.Black);
             Brush dopBrush = new SolidBrush(DopColor);
-            Brush mainBrush = new SolidBrush(MainColor);
 
 
             base.DrawCar(g);
@@ -61,7 +60,7 @@ namespace WindowsFormsSamosval
         }
         public override string ToString()
         {
-            return base.ToString() + ";" + DopColor.Name;
+            return base.ToString() + ";" + DopColor.Name + ";" + Container + ";" + MainPipe;
         }
     }
 }

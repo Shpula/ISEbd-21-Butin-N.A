@@ -60,38 +60,32 @@ namespace WindowsFormsSamosval
         /// </summary>
         /// <param name="filename">Путь и имя файла</param>
         /// <returns></returns>
+
         public bool SaveData(string filename)
         {
             if (File.Exists(filename))
             {
                 File.Delete(filename);
             }
-            using (FileStream fs = new FileStream(filename, FileMode.Create))
+            using (StreamWriter sw = new StreamWriter(filename))
             {
-                //Записываем количество уровней
-                WriteToFile("CountLeveles:" + parkingStages.Count +
-               Environment.NewLine, fs);
+                sw.WriteLine("CountLevels:" + parkingStages.Count);
                 foreach (var level in parkingStages)
                 {
-                    //Начинаем уровень
-                    WriteToFile("Level" + Environment.NewLine, fs);
+                    sw.WriteLine("Level");
                     for (int i = 0; i < countPlaces; i++)
                     {
                         var car = level[i];
                         if (car != null)
                         {
-                            //если место не пустое
-                            //Записываем тип мшаины
-                            if (car.GetType().Name == "Car")
+                            if (car.GetType().Name == "SamosvalCar")
                             {
-                                WriteToFile(i + ":Car:", fs);
+                                sw.WriteLine(i + ":SamosvalCar:" + car);
                             }
-                            if (car.GetType().Name == "SportCar")
+                            if (car.GetType().Name == "SuperSamosval")
                             {
-                                WriteToFile(i + ":SportCar:", fs);
+                                sw.WriteLine(i + ":SuperSamosval:" + car);
                             }
-                            //Записываемые параметры
-                            WriteToFile(car + Environment.NewLine, fs);
                         }
                     }
                 }
@@ -113,67 +107,61 @@ namespace WindowsFormsSamosval
         /// </summary>
         /// <param name="filename"></param>
         /// <returns></returns>
+
         public bool LoadData(string filename)
         {
             if (!File.Exists(filename))
             {
                 return false;
             }
-            string bufferTextFromFile = "";
-            using (FileStream fs = new FileStream(filename, FileMode.Open))
-            {
-                byte[] b = new byte[fs.Length];
-                UTF8Encoding temp = new UTF8Encoding(true);
-                while (fs.Read(b, 0, b.Length) > 0)
-                {
-                    bufferTextFromFile += temp.GetString(b);
-                }
-            }
-            bufferTextFromFile = bufferTextFromFile.Replace("\r", "");
-            var strs = bufferTextFromFile.Split('\n');
-            if (strs[0].Contains("CountLeveles"))
-            {
-                //считываем количество уровней
-                int count = Convert.ToInt32(strs[0].Split(':')[1]);
-                if (parkingStages != null)
-                {
-                    parkingStages.Clear();
-                }
-                parkingStages = new List<Parking<ITransport>>(count);
-            }
-            else
-            {
-                //если нет такой записи, то это не те данные
-                return false;
-            }
             int counter = -1;
             ITransport car = null;
-            for (int i = 1; i < strs.Length; ++i)
+            using (StreamReader sr = new StreamReader(filename))
             {
-                //идем по считанным записям
-                if (strs[i] == "Level")
+                string line = sr.ReadLine();
+                int count;
+                bool isValid = line.Contains("CountLevels");
+                if (isValid)
                 {
-                    //начинаем новый уровень
-                    counter++;
-                parkingStages.Add(new Parking<ITransport>(countPlaces,
-pictureWidth, pictureHeight));
-                    continue;
+                    count = Convert.ToInt32(line.Split(':')[1]);
+                    if (parkingStages != null)
+                    {
+                        parkingStages.Clear();
+                    }
+                    parkingStages = new List<Parking<ITransport>>(count);
                 }
-                if (string.IsNullOrEmpty(strs[i]))
+                else
                 {
-                    continue;
+                    return false;
                 }
-                if (strs[i].Split(':')[1] == "SamosvalCar")
+                while ((line = sr.ReadLine()) != null)
                 {
-                    car = new SamosvalCar(strs[i].Split(':')[2]);
+                    if (line == "Level")
+                    {
+                        counter++;
+                        parkingStages.Add(new Parking<ITransport>(countPlaces, pictureWidth, pictureHeight));
+                        continue;
+                    }
+                    if (string.IsNullOrEmpty(line))
+                    {
+                        continue;
+                    }
+                    string[] splitLine = line.Split(':');
+                    if (splitLine.Length > 2)
+                    {
+                        if (splitLine[1] == "SamosvalCar")
+                        {
+                            car = new SamosvalCar(splitLine[2]);
+                        }
+                        else
+                        {
+                            car = new SuperSamosval(splitLine[2]);
+                        }
+                        parkingStages[counter][Convert.ToInt32(splitLine[0])] = car;
+                    }
                 }
-                else if (strs[i].Split(':')[1] == "SuperSamosval")
-                {
-                    car = new SuperSamosval(strs[i].Split(':')[2]);
-                }
-                parkingStages[counter][Convert.ToInt32(strs[i].Split(':')[0])] = car;
+                return true;
             }
-            return true;
         }
     }
 }

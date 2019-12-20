@@ -139,19 +139,14 @@ namespace WindowsFormsSamosval
             Draw();
         }
 
-        private void файлToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void загрузитьToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (openFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 if (parking.LoadData(openFileDialog.FileName))
                 {
-                MessageBox.Show("Загрузили", "Результат", MessageBoxButtons.OK,
-MessageBoxIcon.Information);
+                    MessageBox.Show("Загрузили", "Результат", MessageBoxButtons.OK,
+    MessageBoxIcon.Information);
                 }
                 else
                 {
@@ -178,11 +173,6 @@ MessageBoxIcon.Information);
                    MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-        }
-
-        private void saveFileDialog1_FileOk(object sender, CancelEventArgs e)
-        {
-
         }
     }
 }

@@ -143,7 +143,6 @@
             this.файлToolStripMenuItem.Name = "файлToolStripMenuItem";
             this.файлToolStripMenuItem.Size = new System.Drawing.Size(69, 29);
             this.файлToolStripMenuItem.Text = "Файл";
-            this.файлToolStripMenuItem.Click += new System.EventHandler(this.файлToolStripMenuItem_Click);
             // 
             // сохранитьToolStripMenuItem
             // 
@@ -162,7 +161,6 @@
             // saveFileDialog
             // 
             this.saveFileDialog.Filter = "txt file | *.txt";
-            this.saveFileDialog.FileOk += new System.ComponentModel.CancelEventHandler(this.saveFileDialog1_FileOk);
             // 
             // openFileDialog
             // 
