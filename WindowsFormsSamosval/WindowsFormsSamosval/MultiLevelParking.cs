@@ -23,7 +23,7 @@ namespace WindowsFormsSamosval
         /// Сколько мест на каждом уровне
         /// </summary>
 
-        private const int countPlaces = 20;
+        private const int countPlaces = 15;
         /// <summary>
         /// Конструктор
         /// </summary>
@@ -112,7 +112,7 @@ namespace WindowsFormsSamosval
         {
             if (!File.Exists(filename))
             {
-                return false;
+                throw new FileNotFoundException();
             }
             int counter = -1;
             ITransport car = null;
@@ -132,7 +132,7 @@ namespace WindowsFormsSamosval
                 }
                 else
                 {
-                    return false;
+                    throw new Exception("Неверный формат файла");
                 }
                 while ((line = sr.ReadLine()) != null)
                 {
