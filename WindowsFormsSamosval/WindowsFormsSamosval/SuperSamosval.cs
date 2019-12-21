@@ -13,13 +13,20 @@ namespace WindowsFormsSamosval
         public bool MainPipe { private set; get; }
         public bool Container { private set; get; }
 
+        public CountWheels Wheels { private set; get; }
+        public string WheelsForm;
+        public Color WheelsColor { private set; get; }
+
         public SuperSamosval(int maxSpeed, float weight, Color mainColor, Color dopColor,
-       bool mainPipe, bool container) :
+       bool mainPipe, bool container, CountWheels countWheels, string wheelsForm, Color wheelColor) :
         base(maxSpeed, weight, mainColor)
         {
             DopColor = dopColor;
             MainPipe = mainPipe;
             Container = container;
+            Wheels = countWheels;
+            WheelsForm = wheelsForm;
+            WheelsColor = wheelColor;
         }
         public override void DrawCar(Graphics g)
         {
@@ -29,6 +36,24 @@ namespace WindowsFormsSamosval
             Brush brush1 = new SolidBrush(Color.Orange);
 
             base.DrawCar(g);
+
+            IWheels motors;
+            switch (WheelsForm)
+            {
+                case "sq":
+                    motors = new SqWheels(_startPosX, _startPosY);
+                    break;
+                case "circle":
+                    motors = new CircleWheels(_startPosX, _startPosY);
+                    break;
+                case "cross":
+                    motors = new CrossWheels(_startPosX, _startPosY);
+                    break;
+                default:
+                    motors = new SqWheels(_startPosX, _startPosY);
+                    break;
+            }
+            motors.DrawWheels(g, Wheels, WheelsColor);
 
             if (MainPipe)
             {
