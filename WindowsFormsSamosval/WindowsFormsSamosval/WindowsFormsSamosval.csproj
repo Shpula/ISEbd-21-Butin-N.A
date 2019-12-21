@@ -71,9 +71,9 @@
     <Compile Include="ITransport.cs" />
     <Compile Include="MultiLevelParking.cs" />
     <Compile Include="Parking.cs" />
-    <Compile Include="ParkingNotFoundException.cs" />
-    <Compile Include="ParkingOccupiedPlaceException.cs" />
-    <Compile Include="ParkingOverflowException.cs" />
+    <Compile Include="Exception\ParkingNotFoundException.cs" />
+    <Compile Include="Exception\ParkingOccupiedPlaceException.cs" />
+    <Compile Include="Exception\ParkingOverflowException.cs" />
     <Compile Include="SamosvalCar.cs" />
     <Compile Include="SamosvalForm.cs">
       <SubType>Form</SubType>
