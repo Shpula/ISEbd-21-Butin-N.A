@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsSamosval
 {
-    class SuperSamosval : SamosvalCar
+    class SuperSamosval : SamosvalCar, IComparable<SuperSamosval>, IEquatable<SuperSamosval>
     {
         public Color DopColor { private set; get; }
         public bool MainPipe { private set; get; }
@@ -61,6 +61,86 @@ namespace WindowsFormsSamosval
         public override string ToString()
         {
             return base.ToString() + ";" + DopColor.Name + ";" + Container + ";" + MainPipe;
+        }
+
+        public int CompareTo(SuperSamosval other)
+        {
+            var res = (this is SamosvalCar).CompareTo(other is SamosvalCar);
+            if (res != 0)
+            {
+                return res;
+            }
+            if (DopColor != other.DopColor)
+            {
+                DopColor.Name.CompareTo(other.DopColor.Name);
+            }
+            if (MainPipe != other.MainPipe)
+            {
+                return MainPipe.CompareTo(other.MainPipe);
+            }
+            if (Container != other.Container)
+            {
+                return Container.CompareTo(other.Container);
+            }
+            return 0;
+        }
+        /// <summary>
+        /// Метод интерфейса IEquatable для класса SportCar
+        /// </summary>
+        /// <param name="other"></param>
+        /// <returns></returns>
+        public bool Equals(SuperSamosval other)
+        {
+            var res = (this as SamosvalCar).Equals(other as SamosvalCar);
+            if (!res)
+            {
+                return res;
+            }
+            if (GetType().Name != other.GetType().Name)
+            {
+                return false;
+            }
+            if (DopColor != other.DopColor)
+            {
+                return false;
+            }
+            if (MainPipe != other.MainPipe)
+            {
+                return false;
+            }
+            if (Container != other.Container)
+            {
+                return false;
+            }
+            return true;
+        }
+        /// <summary>
+        /// Перегрузка метода от object
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <returns></returns>
+        public override bool Equals(Object obj)
+        {
+            if (obj == null)
+            {
+                return false;
+            }
+            if (!(obj is SuperSamosval carObj))
+            {
+                return false;
+            }
+            else
+            {
+                return Equals(carObj);
+            }
+        }
+        /// <summary>
+        /// Перегрузка метода от object
+        /// </summary>
+        /// <returns></returns>
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
         }
     }
 }

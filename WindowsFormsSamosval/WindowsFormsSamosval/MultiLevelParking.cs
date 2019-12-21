@@ -67,24 +67,27 @@ namespace WindowsFormsSamosval
             {
                 File.Delete(filename);
             }
-            using (StreamWriter sw = new StreamWriter(filename))
+            using (FileStream fs = new FileStream(filename, FileMode.Create))
             {
-                sw.WriteLine("CountLevels:" + parkingStages.Count);
+                WriteToFile("CountLeveles:" + parkingStages.Count + Environment.NewLine, fs);
                 foreach (var level in parkingStages)
                 {
-                    sw.WriteLine("Level");
-                    for (int i = 0; i < countPlaces; i++)
+                    WriteToFile("Level" + Environment.NewLine, fs);
+                    foreach (ITransport car in level)
                     {
-                        var car = level[i];
-                        if (car != null)
+                        for (int i = 0; i < countPlaces; i++)
                         {
-                            if (car.GetType().Name == "SamosvalCar")
+                            if (car != null)
                             {
-                                sw.WriteLine(i + ":SamosvalCar:" + car);
-                            }
-                            if (car.GetType().Name == "SuperSamosval")
-                            {
-                                sw.WriteLine(i + ":SuperSamosval:" + car);
+                                if (car.GetType().Name == "SamosvalCar")
+                                {
+                                    WriteToFile(i + ":SamosvalCar:" + car, fs);
+                                }
+                                if (car.GetType().Name == "SuperSamosval")
+                                {
+                                    WriteToFile(i + ":SuperSamosval:" + car, fs);
+                                }
+                                WriteToFile(car + Environment.NewLine, fs);
                             }
                         }
                     }
@@ -163,5 +166,10 @@ namespace WindowsFormsSamosval
                 return true;
             }
         }
+        public void Sort()
+        {
+            parkingStages.Sort();
+        }
+
     }
 }
