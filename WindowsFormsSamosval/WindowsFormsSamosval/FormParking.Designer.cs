@@ -31,14 +31,14 @@
             this.pictureBoxParking = new System.Windows.Forms.PictureBox();
             this.buttonSetSamosval = new System.Windows.Forms.Button();
             this.buttonSetSuperSamosval = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.TakeCarGroup = new System.Windows.Forms.GroupBox();
             this.pictureBoxTakeCar = new System.Windows.Forms.PictureBox();
             this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.buttonTakeCar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxParking)).BeginInit();
-            this.groupBox1.SuspendLayout();
+            this.TakeCarGroup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTakeCar)).BeginInit();
             this.SuspendLayout();
             // 
@@ -71,19 +71,19 @@
             this.buttonSetSuperSamosval.UseVisualStyleBackColor = true;
             this.buttonSetSuperSamosval.Click += new System.EventHandler(this.buttonSetSuperSamosval_Click);
             // 
-            // groupBox1
+            // TakeCarGroup
             // 
-            this.groupBox1.Controls.Add(this.pictureBoxTakeCar);
-            this.groupBox1.Controls.Add(this.maskedTextBox1);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.buttonTakeCar);
-            this.groupBox1.Location = new System.Drawing.Point(845, 320);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(330, 424);
-            this.groupBox1.TabIndex = 3;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
+            this.TakeCarGroup.Controls.Add(this.pictureBoxTakeCar);
+            this.TakeCarGroup.Controls.Add(this.maskedTextBox1);
+            this.TakeCarGroup.Controls.Add(this.label2);
+            this.TakeCarGroup.Controls.Add(this.label1);
+            this.TakeCarGroup.Controls.Add(this.buttonTakeCar);
+            this.TakeCarGroup.Location = new System.Drawing.Point(845, 320);
+            this.TakeCarGroup.Name = "TakeCarGroup";
+            this.TakeCarGroup.Size = new System.Drawing.Size(330, 424);
+            this.TakeCarGroup.TabIndex = 3;
+            this.TakeCarGroup.TabStop = false;
+            this.TakeCarGroup.Text = "TakeCarGroup";
             // 
             // pictureBoxTakeCar
             // 
@@ -133,15 +133,15 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1178, 744);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.TakeCarGroup);
             this.Controls.Add(this.buttonSetSuperSamosval);
             this.Controls.Add(this.buttonSetSamosval);
             this.Controls.Add(this.pictureBoxParking);
             this.Name = "FormParking";
             this.Text = "FormParking";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxParking)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.TakeCarGroup.ResumeLayout(false);
+            this.TakeCarGroup.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTakeCar)).EndInit();
             this.ResumeLayout(false);
 
@@ -152,7 +152,7 @@
         private System.Windows.Forms.PictureBox pictureBoxParking;
         private System.Windows.Forms.Button buttonSetSamosval;
         private System.Windows.Forms.Button buttonSetSuperSamosval;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox TakeCarGroup;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button buttonTakeCar;
         private System.Windows.Forms.PictureBox pictureBoxTakeCar;
