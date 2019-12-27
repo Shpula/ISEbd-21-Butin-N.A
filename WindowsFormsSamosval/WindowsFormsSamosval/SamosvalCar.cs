@@ -71,7 +71,6 @@ namespace WindowsFormsSamosval
             Pen pen = new Pen(Color.Black);
             Brush dopBrush = new SolidBrush(Color.Black);
             Brush mainBrush = new SolidBrush(MainColor);
-
             //Колёса
             g.FillEllipse(dopBrush, _startPosX, _startPosY + 50, 20, 20);
             g.FillEllipse(dopBrush, _startPosX + 30, _startPosY + 50, 20, 20);
@@ -83,7 +82,6 @@ namespace WindowsFormsSamosval
             g.FillRectangle(mainBrush, _startPosX + 65, _startPosY - 30 + 50, 50, 30);
             //Стекло
             g.FillRectangle(dopBrush, _startPosX + 85, _startPosY - 45 + 50, 10, 15);
-        
         }
 
         public override string ToString()
