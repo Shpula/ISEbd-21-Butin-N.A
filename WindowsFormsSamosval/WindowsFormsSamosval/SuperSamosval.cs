@@ -36,9 +36,7 @@ namespace WindowsFormsSamosval
             Brush brush = new SolidBrush(Color.Black);
             Brush brush1 = new SolidBrush(Color.Orange);
 
-
             base.DrawCar(g);
-
             IWheels motors;
             switch (WheelsForm)
             {
@@ -56,7 +54,6 @@ namespace WindowsFormsSamosval
                     break;
             }
             motors.DrawWheels(g, Wheels, WheelsColor);
-
 
             if (MainPipe)
             {
