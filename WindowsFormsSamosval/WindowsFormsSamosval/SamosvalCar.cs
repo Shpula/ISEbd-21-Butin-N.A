@@ -77,5 +77,10 @@ namespace WindowsFormsSamosval
             g.FillRectangle(dopBrush, _startPosX + 85, _startPosY - 45 + 40 ,10, 15);
         
         }
+
+        public override string ToString()
+        {
+            return MaxSpeed + ";" + Weight + ";" + MainColor;
+        }
     }
 }

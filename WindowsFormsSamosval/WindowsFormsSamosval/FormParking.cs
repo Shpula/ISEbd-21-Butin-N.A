@@ -59,9 +59,9 @@ namespace WindowsFormsSamosval
         }
         private void buttonTakeCar_Click(object sender, EventArgs e)
         {
-            if (maskedTextBox1.Text != "")
+            if (maskedTextBox.Text != "")
             {
-                var car = parking - Convert.ToInt32(maskedTextBox1.Text);
+                var car = parking - Convert.ToInt32(maskedTextBox.Text);
                 if (car != null)
                 {
                     Bitmap bmp = new Bitmap(pictureBoxTakeCar.Width,
@@ -80,6 +80,24 @@ namespace WindowsFormsSamosval
                 }
                 Draw();
             }
+
+        }
+        private void buttonFindMatches_Click(object sender, EventArgs e)
+        {
+            if (maskedTextBox.Text != "")
+            {
+                if (parking == Convert.ToInt32(maskedTextBox.Text))
+                {
+                    MessageBox.Show("Совпадения найдены", "Результат",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Совпадений нет", "Результат",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            Draw();
         }
     }
 }

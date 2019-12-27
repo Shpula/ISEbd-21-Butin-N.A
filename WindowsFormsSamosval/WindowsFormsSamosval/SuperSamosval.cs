@@ -65,5 +65,10 @@ namespace WindowsFormsSamosval
                 g.FillRectangle(dopBrush, _startPosX - 5, _startPosY - 50 + 40, 60, 40);
             }
         }
+        public override string ToString()
+        {
+            return base.ToString() + ";" + DopColor.Name + ";" + MainPipe + ";" + Container + ";" +
+           Wheels + ";" + WheelsForm + ";" + WheelsColor;
+        }
     }
 }
