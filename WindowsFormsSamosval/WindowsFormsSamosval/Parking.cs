@@ -12,7 +12,7 @@ namespace WindowsFormsSamosval
     {
         private Dictionary<int, T> _places;
         private int _maxCount;
-
+        private Stack<T> removedCar;
         private int PictureWidth { get; set; }
         private int PictureHeight { get; set; }
         private const int _placeSizeWidth = 210;
@@ -21,6 +21,7 @@ namespace WindowsFormsSamosval
         {
             _maxCount = sizes;
             _places = new Dictionary<int, T>();
+            removedCar = new Stack<T>();
             PictureWidth = pictureWidth;
             PictureHeight = pictureHeight;
         }
@@ -55,10 +56,16 @@ namespace WindowsFormsSamosval
             if (!p.CheckFreePlace(index))
             {
                 T car = p._places[index];
+                p.removedCar.Push(car);
                 p._places.Remove(index);
                 return car;
             }
             return null;
+        }
+
+        public T GetCarByKey(int key)
+        {
+            return _places.ContainsKey(key) ? _places[key] : null;
         }
 
         private bool CheckFreePlace(int index)

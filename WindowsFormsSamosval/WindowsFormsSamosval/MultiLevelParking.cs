@@ -51,5 +51,17 @@ namespace WindowsFormsSamosval
                 return null;
             }
         }
+        public ITransport this[int ind, int key]
+        {
+            get
+            {
+                if (ind > -1 && ind < parkingStages.Count)
+                {
+                    return parkingStages[ind].GetCarByKey(key);
+                }
+                return null;
+
+            }
+        }
     }
 }
