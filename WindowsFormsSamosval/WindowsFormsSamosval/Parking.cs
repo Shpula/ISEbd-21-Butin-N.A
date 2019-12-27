@@ -12,11 +12,11 @@ namespace WindowsFormsSamosval
     {
         private Dictionary<int, T> _places;
         private int _maxCount;
-
         private int PictureWidth { get; set; }
         private int PictureHeight { get; set; }
         private const int _placeSizeWidth = 210;
         private const int _placeSizeHeight = 80;
+        
         public Parking(int sizes, int pictureWidth, int pictureHeight)
         {
             _maxCount = sizes;
