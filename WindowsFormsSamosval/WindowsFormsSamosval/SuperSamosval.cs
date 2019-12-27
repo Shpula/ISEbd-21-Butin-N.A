@@ -39,25 +39,22 @@ namespace WindowsFormsSamosval
         public override void DrawCar(Graphics g)
         {
             Brush dopBrush = new SolidBrush(DopColor);
-
-
             base.DrawCar(g);
-
             if (MainPipe)
             {
                 g.FillRectangle(dopBrush, _startPosX + 63, _startPosY - 60 + 40, 5, 35);
             }
-
             if (Container)
             {
                 g.FillRectangle(dopBrush, _startPosX - 5, _startPosY - 50 + 50, 60, 40);
             }
-
         }
+
         public void SetDopColor(Color color)
         {
             DopColor = color;
         }
+
         public override string ToString()
         {
             return base.ToString() + ";" + DopColor.Name + ";" + Container + ";" + MainPipe;
