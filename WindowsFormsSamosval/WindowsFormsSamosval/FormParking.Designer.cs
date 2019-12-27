@@ -32,7 +32,7 @@
             this.buttonSetSamosval = new System.Windows.Forms.Button();
             this.buttonSetSuperSamosval = new System.Windows.Forms.Button();
             this.TakeCarGroup = new System.Windows.Forms.GroupBox();
-            this.buttonFindMatches = new System.Windows.Forms.Button();
+
             this.TakeCarGroup = new System.Windows.Forms.GroupBox();
             this.pictureBoxTakeCar = new System.Windows.Forms.PictureBox();
             this.maskedTextBox = new System.Windows.Forms.MaskedTextBox();
@@ -128,8 +128,7 @@
             this.buttonTakeCar.Size = new System.Drawing.Size(85, 31);
             this.buttonTakeCar.TabIndex = 4;
             this.buttonTakeCar.Text = "Забрать";
-            this.buttonTakeCar.UseVisualStyleBackColor = true;
-            this.buttonTakeCar.Click += new System.EventHandler(this.buttonTakeCar_Click);
+
             // 
             // listBoxLevels
             // 
@@ -139,7 +138,7 @@
             this.listBoxLevels.Name = "listBoxLevels";
             this.listBoxLevels.Size = new System.Drawing.Size(285, 164);
             this.listBoxLevels.TabIndex = 4;
-            this.listBoxLevels.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
+
             // 
             // FormParking
             // 

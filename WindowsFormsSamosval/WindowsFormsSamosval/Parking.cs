@@ -27,12 +27,12 @@ namespace WindowsFormsSamosval
     
         public static bool operator ==(Parking<T, E> p, int index)
         {
-            if (index < 0 || index > p._places.Length || p.CheckFreePlace(index))
+            if (index < 0 || index > p._places.Count || p.CheckFreePlace(index))
             {
                 return false;
             }
 
-            for (int i = 0; i < p._places.Length; i++)
+            for (int i = 0; i < p._places.Count; i++)
             {
                 if (p.CheckFreePlace(i) || i == index)
                 {
@@ -48,12 +48,12 @@ namespace WindowsFormsSamosval
 
         public static bool operator !=(Parking<T, E> p, int index)
         {
-            if (index < 0 || index > p._places.Length || p.CheckFreePlace(index))
+            if (index < 0 || index > p._places.Count || p.CheckFreePlace(index))
             {
                 return false;
             }
 
-            for (int i = 0; i < p._places.Length; i++)
+            for (int i = 0; i < p._places.Count; i++)
             {
                 if (p.CheckFreePlace(i) || i == index)
                 {
@@ -74,7 +74,7 @@ namespace WindowsFormsSamosval
             removedCar = new Stack<T>();
             PictureWidth = pictureWidth;
             PictureHeight = pictureHeight;
-            for (int i = 0; i < _places.Length; i++)
+            for (int i = 0; i < _places.Count; i++)
             {
                 _places[i] = null;
             }
