@@ -32,6 +32,8 @@
             this.buttonSetSamosval = new System.Windows.Forms.Button();
             this.buttonSetSuperSamosval = new System.Windows.Forms.Button();
             this.TakeCarGroup = new System.Windows.Forms.GroupBox();
+            this.buttonFindMatches = new System.Windows.Forms.Button();
+            this.TakeCarGroup = new System.Windows.Forms.GroupBox();
             this.pictureBoxTakeCar = new System.Windows.Forms.PictureBox();
             this.maskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.label2 = new System.Windows.Forms.Label();

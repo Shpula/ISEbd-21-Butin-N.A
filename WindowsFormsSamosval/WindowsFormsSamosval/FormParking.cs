@@ -12,6 +12,7 @@ namespace WindowsFormsSamosval
 {
     public partial class FormParking : Form
     {
+        Parking<ITransport, IWheels> parking;
         MultiLevelParking parking;
         private const int countLevel = 5;
 
@@ -62,25 +63,18 @@ namespace WindowsFormsSamosval
             if (listBoxLevels.SelectedIndex > -1)
             {
             ColorDialog dialog = new ColorDialog();
-                if (dialog.ShowDialog() == DialogResult.OK)
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+                ColorDialog dialogDop = new ColorDialog();
+                if (dialogDop.ShowDialog() == DialogResult.OK)
                 {
-                    ColorDialog dialogDop = new ColorDialog();
-                    if (dialogDop.ShowDialog() == DialogResult.OK)
-                    {
-                        var car = new SuperSamosval(100, 1000, dialog.Color,
-                       dialogDop.Color, true, true);
-                        int place = parking[listBoxLevels.SelectedIndex] + car;
-                        if (place == -1)
-                        {
-                            MessageBox.Show("Нет свободных мест", "Ошибка",
-                           MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
-                        Draw();
-                    }
+                    var car = new SuperSamosval(100, 1000, dialog.Color, dialogDop.Color,
+                   true, true, CountWheels.Three, "sq", Color.Orange);
+                    int place = parking + car;
+                    Draw();
                 }
             }
         }
-
         private void buttonTakeCar_Click(object sender, EventArgs e)
         {
             if (listBoxLevels.SelectedIndex > -1)
