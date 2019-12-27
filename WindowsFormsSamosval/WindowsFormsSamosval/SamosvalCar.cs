@@ -58,12 +58,12 @@ namespace WindowsFormsSamosval
                     break;
             }
         }
+        
         public override void DrawCar(Graphics g)
         {
             Pen pen = new Pen(Color.Black);
             Brush dopBrush = new SolidBrush(DopColor);
             Brush mainBrush = new SolidBrush(MainColor);
-
             //Колёса
             g.FillEllipse(dopBrush, _startPosX, _startPosY + 50, 20, 20);
             g.FillEllipse(dopBrush, _startPosX + 30, _startPosY + 50, 20, 20);
@@ -74,8 +74,12 @@ namespace WindowsFormsSamosval
             g.FillRectangle(mainBrush, _startPosX + 65, _startPosY - 50 + 50, 30, 50);
             g.FillRectangle(mainBrush, _startPosX + 65, _startPosY - 30 + 50, 50, 30);
             //Стекло
-            g.FillRectangle(dopBrush, _startPosX + 85, _startPosY - 45 + 50, 10, 15);
-        
+            g.FillRectangle(dopBrush, _startPosX + 85, _startPosY - 45 + 40 ,10, 15);
+            g.FillRectangle(brush, _startPosX + 85, _startPosY - 45, 10, 15);
+            //Контейнер
+            g.FillRectangle(brush1, _startPosX - 5, _startPosY - 50, 60, 40);
+            //Труба 
+            g.FillRectangle(brush, _startPosX + 63, _startPosY - 60, 5, 35  );
         }
     }
 }
