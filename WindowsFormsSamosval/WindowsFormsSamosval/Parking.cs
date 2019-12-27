@@ -7,16 +7,15 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsSamosval
 {
-   
     public class Parking<T> where T : class, ITransport
     {
         private Dictionary<int, T> _places;
         private int _maxCount;
-
         private int PictureWidth { get; set; }
         private int PictureHeight { get; set; }
         private const int _placeSizeWidth = 210;
         private const int _placeSizeHeight = 80;
+
         public Parking(int sizes, int pictureWidth, int pictureHeight)
         {
             _maxCount = sizes;
@@ -24,6 +23,7 @@ namespace WindowsFormsSamosval
             PictureWidth = pictureWidth;
             PictureHeight = pictureHeight;
         }
+
         public static int operator +(Parking<T> p, T car)
         {
             if (p._places.Count == p._maxCount)
@@ -43,6 +43,7 @@ namespace WindowsFormsSamosval
             }
             return -1;
         }
+
         /// <summary>
         /// Перегрузка оператора вычитания
         /// Логика действия: с парковки забираем автомобиль
@@ -79,6 +80,7 @@ namespace WindowsFormsSamosval
                 _places[keys[i]].DrawCar(g);
             }
         }
+
         /// <summary>
         /// Метод отрисовки разметки парковочных мест
         /// </summary>
