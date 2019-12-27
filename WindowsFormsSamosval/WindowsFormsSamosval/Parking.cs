@@ -7,7 +7,6 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsSamosval
 {
-   
     public class Parking<T> where T : class, ITransport
     {
         private Dictionary<int, T> _places;
