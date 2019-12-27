@@ -11,7 +11,7 @@ namespace WindowsFormsSamosval
     /// Параметризованны класс для хранения набора объектов от интерфейса ITransport
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    public class Parking<T> where T : class, ITransport
+    public class Parking<T, E> where T : class, ITransport where E : class, IWheels
     {
         /// <summary>
         /// Массив объектов, которые храним
@@ -36,6 +36,50 @@ namespace WindowsFormsSamosval
         /// <summary>
         /// Конструктор
         /// </summary>
+        /// 
+    
+        public static bool operator ==(Parking<T, E> p, int index)
+        {
+            if (index < 0 || index > p._places.Length || p.CheckFreePlace(index))
+            {
+                return false;
+            }
+
+            for (int i = 0; i < p._places.Length; i++)
+            {
+                if (p.CheckFreePlace(i) || i == index)
+                {
+                    continue;
+                }
+                if (p._places[i].ToString() == p._places[index].ToString())
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public static bool operator !=(Parking<T, E> p, int index)
+        {
+            if (index < 0 || index > p._places.Length || p.CheckFreePlace(index))
+            {
+                return false;
+            }
+
+            for (int i = 0; i < p._places.Length; i++)
+            {
+                if (p.CheckFreePlace(i) || i == index)
+                {
+                    continue;
+                }
+                if (p._places[i].ToString() == p._places[index].ToString())
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+
         public Parking(int sizes, int pictureWidth, int pictureHeight)
         {
             _places = new T[sizes];
@@ -46,6 +90,7 @@ namespace WindowsFormsSamosval
                 _places[i] = null;
             }
         }
+
         /// <summary>
         /// Перегрузка оператора сложения
         /// Логика действия: на парковку добавляется автомобиль
@@ -53,7 +98,7 @@ namespace WindowsFormsSamosval
         /// <param name="p">Парковка</param>
         /// <param name="car">Добавляемый автомобиль</param>
         /// <returns></returns>
-        public static int operator +(Parking<T> p, T car)
+        public static int operator +(Parking<T, E> p, T car)
         {
             for (int i = 0; i < p._places.Length; i++)
             {
@@ -75,7 +120,7 @@ namespace WindowsFormsSamosval
         /// <param name="p">Парковка</param>
         /// <param name="index">Индекс места, с которого пытаемся извлечь
         /// <returns></returns>
-        public static T operator -(Parking<T> p, int index)
+        public static T operator -(Parking<T, E> p, int index)
         {
             if (index < 0 || index > p._places.Length)
             {

@@ -12,12 +12,12 @@ namespace WindowsFormsSamosval
 {
     public partial class FormParking : Form
     {
-        Parking<ITransport> parking;
+        Parking<ITransport, IWheels> parking;
 
         public FormParking()
         {
             InitializeComponent();
-            parking = new Parking<ITransport>(20, pictureBoxParking.Width,
+            parking = new Parking<ITransport, IWheels>(20, pictureBoxParking.Width,
            pictureBoxParking.Height);
             Draw();
 
@@ -53,7 +53,7 @@ namespace WindowsFormsSamosval
                 if (dialogDop.ShowDialog() == DialogResult.OK)
                 {
                     var car = new SuperSamosval(100, 1000, dialog.Color, dialogDop.Color,
-                   true, true);
+                   true, true, CountWheels.Three, "cross", Color.Orange);
                     int place = parking + car;
                     Draw();
                 }
