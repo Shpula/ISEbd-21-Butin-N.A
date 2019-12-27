@@ -74,7 +74,10 @@ namespace WindowsFormsSamosval
             g.FillRectangle(brush1, _startPosX + 65, _startPosY - 30, 50, 30);
             //Стекло
             g.FillRectangle(brush, _startPosX + 85, _startPosY - 45, 10, 15);
-        
+            //Контейнер
+            g.FillRectangle(brush1, _startPosX - 5, _startPosY - 50, 60, 40);
+            //Труба 
+            g.FillRectangle(brush, _startPosX + 63, _startPosY - 60, 5, 35  );
         }
     }
 }
