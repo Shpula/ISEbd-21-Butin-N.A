@@ -14,7 +14,7 @@ namespace WindowsFormsSamosval
         public Color DopColor { private set; get; }
         public bool MainPipe { private set; get; }
         public bool Container { private set; get; }
-   
+
         public SamosvalCar(int maxSpeed, float weight, Color mainColor, Color dopColor)
         {
             MaxSpeed = maxSpeed;
@@ -58,7 +58,7 @@ namespace WindowsFormsSamosval
                     break;
             }
         }
-        
+
         public override void DrawCar(Graphics g)
         {
             Pen pen = new Pen(Color.Black);
@@ -74,17 +74,12 @@ namespace WindowsFormsSamosval
             g.FillRectangle(mainBrush, _startPosX + 65, _startPosY - 50 + 50, 30, 50);
             g.FillRectangle(mainBrush, _startPosX + 65, _startPosY - 30 + 50, 50, 30);
             //Стекло
-            g.FillRectangle(dopBrush, _startPosX + 85, _startPosY - 45 + 40 ,10, 15);
+            g.FillRectangle(dopBrush, _startPosX + 85, _startPosY - 45 + 40, 10, 15);
             g.FillRectangle(dopBrush, _startPosX + 85, _startPosY - 45, 10, 15);
             //Контейнер
             g.FillRectangle(dopBrush, _startPosX - 5, _startPosY - 50, 60, 40);
             //Труба 
-            g.FillRectangle(dopBrush, _startPosX + 63, _startPosY - 60, 5, 35  );
-        }
-
-        public override string ToString()
-        {
-            return MaxSpeed + ";" + Weight + ";" + MainColor;
+            g.FillRectangle(dopBrush, _startPosX + 63, _startPosY - 60, 5, 35);
         }
     }
 }

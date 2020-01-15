@@ -14,7 +14,7 @@ namespace WindowsFormsSamosval
         /// <summary>
         /// Список с уровнями парковки
         /// </summary>
-        List<Parking<ITransport, IWheels>> parkingStages;
+        List<Parking<ITransport>> parkingStages;
         /// <summary>
         /// Сколько мест на каждом уровне
         /// </summary>
@@ -28,10 +28,10 @@ namespace WindowsFormsSamosval
         /// <param name="pictureHeight"></param>
         public MultiLevelParking(int countStages, int pictureWidth, int pictureHeight)
         {
-            parkingStages = new List<Parking<ITransport, IWheels>>();
+            parkingStages = new List<Parking<ITransport>>();
             for (int i = 0; i < countStages; ++i)
             {
-                parkingStages.Add(new Parking<ITransport , IWheels>(countPlaces, pictureWidth,
+                parkingStages.Add(new Parking<ITransport>(countPlaces, pictureWidth,
                pictureHeight));
             }
         }
@@ -41,7 +41,7 @@ namespace WindowsFormsSamosval
         /// </summary>
         /// <param name="ind"></param>
         /// <returns></returns>
-        public Parking<ITransport, IWheels> this[int ind]
+        public Parking<ITransport> this[int ind]
         {
             get
             {
@@ -50,18 +50,6 @@ namespace WindowsFormsSamosval
                     return parkingStages[ind];
                 }
                 return null;
-            }
-        }
-        public ITransport this[int ind, int key]
-        {
-            get
-            {
-                if (ind > -1 && ind < parkingStages.Count)
-                {
-                    return parkingStages[ind].GetCarByKey(key);
-                }
-                return null;
-
             }
         }
     }
