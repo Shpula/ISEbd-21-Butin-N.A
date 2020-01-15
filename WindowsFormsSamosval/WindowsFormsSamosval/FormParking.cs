@@ -214,5 +214,10 @@ namespace WindowsFormsSamosval
                 }
             }
         }
+
+        private void listBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Draw();
+        }
     }
 }
