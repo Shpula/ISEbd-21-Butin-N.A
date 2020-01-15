@@ -31,6 +31,7 @@ namespace WindowsFormsSamosval
         }
 
         public abstract void DrawCar(Graphics g);
+
         public abstract void MoveTransport(Direction direction);
     }
 }

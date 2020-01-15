@@ -34,6 +34,7 @@
             this.maskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.labelPlace = new System.Windows.Forms.Label();
             this.buttonTakeCar = new System.Windows.Forms.Button();
+            this.labelTakeCar = new System.Windows.Forms.Label();
             this.listBoxLevels = new System.Windows.Forms.ListBox();
             this.buttonSetCar = new System.Windows.Forms.Button();
             this.menuStrip = new System.Windows.Forms.MenuStrip();
@@ -42,6 +43,8 @@
             this.загрузитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.buttonSort = new System.Windows.Forms.Button();
+
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxParking)).BeginInit();
             this.groupBoxTakeCar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTakeCar)).BeginInit();
@@ -80,7 +83,7 @@
             // 
             // maskedTextBox
             // 
-            this.maskedTextBox.Location = new System.Drawing.Point(160, 47);
+            this.maskedTextBox.Location = new System.Drawing.Point(151, 58);
             this.maskedTextBox.Name = "maskedTextBox";
             this.maskedTextBox.Size = new System.Drawing.Size(60, 26);
             this.maskedTextBox.TabIndex = 7;
@@ -88,7 +91,7 @@
             // labelPlace
             // 
             this.labelPlace.AutoSize = true;
-            this.labelPlace.Location = new System.Drawing.Point(84, 47);
+            this.labelPlace.Location = new System.Drawing.Point(84, 61);
             this.labelPlace.Name = "labelPlace";
             this.labelPlace.Size = new System.Drawing.Size(61, 20);
             this.labelPlace.TabIndex = 6;
@@ -101,8 +104,16 @@
             this.buttonTakeCar.Size = new System.Drawing.Size(85, 31);
             this.buttonTakeCar.TabIndex = 4;
             this.buttonTakeCar.Text = "Забрать";
-            this.buttonTakeCar.UseVisualStyleBackColor = true;
             this.buttonTakeCar.Click += new System.EventHandler(this.buttonTakeCar_Click);
+            // 
+            // labelTakeCar
+            // 
+            this.labelTakeCar.AutoSize = true;
+            this.labelTakeCar.Location = new System.Drawing.Point(84, 31);
+            this.labelTakeCar.Name = "labelTakeCar";
+            this.labelTakeCar.Size = new System.Drawing.Size(136, 20);
+            this.labelTakeCar.TabIndex = 5;
+            this.labelTakeCar.Text = "Забрать машину";
             // 
             // listBoxLevels
             // 
@@ -159,20 +170,22 @@
             this.загрузитьToolStripMenuItem.Text = "Загрузить";
             this.загрузитьToolStripMenuItem.Click += new System.EventHandler(this.загрузитьToolStripMenuItem_Click);
             // 
-            // saveFileDialog
+            // buttonSort
             // 
-            this.saveFileDialog.Filter = "txt file | *.txt";
-            // 
-            // openFileDialog
-            // 
-            this.openFileDialog.FileName = "openFileDialog";
-            this.openFileDialog.Filter = "txt file | *.txt";
+            this.buttonSort.Location = new System.Drawing.Point(933, 197);
+            this.buttonSort.Name = "buttonSort";
+            this.buttonSort.Size = new System.Drawing.Size(173, 50);
+            this.buttonSort.TabIndex = 7;
+            this.buttonSort.Text = "Сортировать";
+            this.buttonSort.UseVisualStyleBackColor = true;
+            this.buttonSort.Click += new System.EventHandler(this.buttonSort_Click);
             // 
             // FormParking
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1178, 744);
+            this.Controls.Add(this.buttonSort);
             this.Controls.Add(this.buttonSetCar);
             this.Controls.Add(this.listBoxLevels);
             this.Controls.Add(this.groupBoxTakeCar);
@@ -196,6 +209,7 @@
 
         private System.Windows.Forms.PictureBox pictureBoxParking;
         private System.Windows.Forms.GroupBox groupBoxTakeCar;
+        private System.Windows.Forms.Label labelTakeCar;
         private System.Windows.Forms.Button buttonTakeCar;
         private System.Windows.Forms.PictureBox pictureBoxTakeCar;
         private System.Windows.Forms.MaskedTextBox maskedTextBox;
@@ -208,5 +222,6 @@
         private System.Windows.Forms.ToolStripMenuItem загрузитьToolStripMenuItem;
         private System.Windows.Forms.SaveFileDialog saveFileDialog;
         private System.Windows.Forms.OpenFileDialog openFileDialog;
+        private System.Windows.Forms.Button buttonSort;
     }
 }

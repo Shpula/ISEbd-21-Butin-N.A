@@ -152,5 +152,10 @@ namespace WindowsFormsSamosval
                 return true;
             }
         }
+
+        public void Sort()
+        {
+            parkingStages.Sort();
+        }
     }
 }
