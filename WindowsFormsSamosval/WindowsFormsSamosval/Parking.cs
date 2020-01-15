@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WindowsFormsCars;
 
 namespace WindowsFormsSamosval
 {
@@ -28,7 +29,7 @@ namespace WindowsFormsSamosval
         {
             if (p._places.Count == p._maxCount)
             {
-                return -1;
+                throw new ParkingOverflowException();
             }
             for (int i = 0; i < p._maxCount; i++)
             {
@@ -59,7 +60,7 @@ namespace WindowsFormsSamosval
                 p._places.Remove(index);
                 return car;
             }
-            return null;
+            throw new ParkingNotFoundException(index);
         }
 
         private bool CheckFreePlace(int index)
@@ -100,6 +101,7 @@ namespace WindowsFormsSamosval
                 g.DrawLine(pen, i * _placeSizeWidth, 0, i * _placeSizeWidth, 400);
             }
         }
+
         public T this[int ind]
         {
             get
@@ -108,7 +110,7 @@ namespace WindowsFormsSamosval
                 {
                     return _places[ind];
                 }
-                return null;
+                throw new ParkingNotFoundException(ind);
             }
             set
             {
@@ -117,6 +119,10 @@ namespace WindowsFormsSamosval
                     _places.Add(ind, value);
                     _places[ind].SetPosition(5 + ind / 5 * _placeSizeWidth + 5, ind % 5
                     * _placeSizeHeight + 15, PictureWidth, PictureHeight);
+                }
+                else
+                {
+                    throw new ParkingOccupiedPlaceException(ind);
                 }
             }
         }

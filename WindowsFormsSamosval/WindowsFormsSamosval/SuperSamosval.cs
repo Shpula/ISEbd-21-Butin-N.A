@@ -45,7 +45,6 @@ namespace WindowsFormsSamosval
             {
                 g.FillRectangle(dopBrush, _startPosX + 63, _startPosY - 60 + 40, 5, 35);
             }
-
             if (Container)
             {
                 g.FillRectangle(dopBrush, _startPosX - 5, _startPosY - 50 + 50, 60, 40);

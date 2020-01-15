@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.pictureBoxParking = new System.Windows.Forms.PictureBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBoxTakeCar = new System.Windows.Forms.GroupBox();
             this.pictureBoxTakeCar = new System.Windows.Forms.PictureBox();
             this.maskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.labelPlace = new System.Windows.Forms.Label();
@@ -40,10 +40,10 @@
             this.файлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.сохранитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.загрузитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.saveFileParking = new System.Windows.Forms.SaveFileDialog();
-            this.openFileParking = new System.Windows.Forms.OpenFileDialog();
+            this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
+            this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxParking)).BeginInit();
-            this.groupBox1.SuspendLayout();
+            this.groupBoxTakeCar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTakeCar)).BeginInit();
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
@@ -57,18 +57,18 @@
             this.pictureBoxParking.TabIndex = 0;
             this.pictureBoxParking.TabStop = false;
             // 
-            // groupBox1
+            // groupBoxTakeCar
             // 
-            this.groupBox1.Controls.Add(this.pictureBoxTakeCar);
-            this.groupBox1.Controls.Add(this.maskedTextBox);
-            this.groupBox1.Controls.Add(this.labelPlace);
-            this.groupBox1.Controls.Add(this.buttonTakeCar);
-            this.groupBox1.Location = new System.Drawing.Point(845, 320);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(330, 424);
-            this.groupBox1.TabIndex = 3;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Забрать машину";
+            this.groupBoxTakeCar.Controls.Add(this.pictureBoxTakeCar);
+            this.groupBoxTakeCar.Controls.Add(this.maskedTextBox);
+            this.groupBoxTakeCar.Controls.Add(this.labelPlace);
+            this.groupBoxTakeCar.Controls.Add(this.buttonTakeCar);
+            this.groupBoxTakeCar.Location = new System.Drawing.Point(845, 320);
+            this.groupBoxTakeCar.Name = "groupBoxTakeCar";
+            this.groupBoxTakeCar.Size = new System.Drawing.Size(330, 424);
+            this.groupBoxTakeCar.TabIndex = 3;
+            this.groupBoxTakeCar.TabStop = false;
+            this.groupBoxTakeCar.Text = "Забрать машину";
             // 
             // pictureBoxTakeCar
             // 
@@ -112,7 +112,7 @@
             this.listBoxLevels.Name = "listBoxLevels";
             this.listBoxLevels.Size = new System.Drawing.Size(285, 164);
             this.listBoxLevels.TabIndex = 4;
-            this.listBoxLevels.SelectedIndexChanged += new System.EventHandler(this.listBoxLevels_SelectedIndexChanged);
+            this.listBoxLevels.SelectedIndexChanged += new System.EventHandler(this.listBox_SelectedIndexChanged);
             // 
             // buttonSetCar
             // 
@@ -148,25 +148,25 @@
             // сохранитьToolStripMenuItem
             // 
             this.сохранитьToolStripMenuItem.Name = "сохранитьToolStripMenuItem";
-            this.сохранитьToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.сохранитьToolStripMenuItem.Size = new System.Drawing.Size(200, 34);
             this.сохранитьToolStripMenuItem.Text = "Сохранить";
             this.сохранитьToolStripMenuItem.Click += new System.EventHandler(this.сохранитьToolStripMenuItem_Click);
             // 
             // загрузитьToolStripMenuItem
             // 
             this.загрузитьToolStripMenuItem.Name = "загрузитьToolStripMenuItem";
-            this.загрузитьToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.загрузитьToolStripMenuItem.Size = new System.Drawing.Size(200, 34);
             this.загрузитьToolStripMenuItem.Text = "Загрузить";
             this.загрузитьToolStripMenuItem.Click += new System.EventHandler(this.загрузитьToolStripMenuItem_Click);
             // 
-            // saveFileParking
+            // saveFileDialog
             // 
-            this.saveFileParking.Filter = "txt file | *.txt";
+            this.saveFileDialog.Filter = "txt file | *.txt";
             // 
-            // openFileParking
+            // openFileDialog
             // 
-            this.openFileParking.FileName = "openFileDialog";
-            this.openFileParking.Filter = "txt file | *.txt";
+            this.openFileDialog.FileName = "openFileDialog";
+            this.openFileDialog.Filter = "txt file | *.txt";
             // 
             // FormParking
             // 
@@ -175,15 +175,15 @@
             this.ClientSize = new System.Drawing.Size(1178, 744);
             this.Controls.Add(this.buttonSetCar);
             this.Controls.Add(this.listBoxLevels);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.groupBoxTakeCar);
             this.Controls.Add(this.pictureBoxParking);
             this.Controls.Add(this.menuStrip);
             this.MainMenuStrip = this.menuStrip;
             this.Name = "FormParking";
             this.Text = "Парковка";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxParking)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.groupBoxTakeCar.ResumeLayout(false);
+            this.groupBoxTakeCar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTakeCar)).EndInit();
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
@@ -195,7 +195,7 @@
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBoxParking;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBoxTakeCar;
         private System.Windows.Forms.Button buttonTakeCar;
         private System.Windows.Forms.PictureBox pictureBoxTakeCar;
         private System.Windows.Forms.MaskedTextBox maskedTextBox;
@@ -206,7 +206,7 @@
         private System.Windows.Forms.ToolStripMenuItem файлToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem сохранитьToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem загрузитьToolStripMenuItem;
-        private System.Windows.Forms.SaveFileDialog saveFileParking;
-        private System.Windows.Forms.OpenFileDialog openFileParking;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog;
+        private System.Windows.Forms.OpenFileDialog openFileDialog;
     }
 }
