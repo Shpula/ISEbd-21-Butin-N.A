@@ -15,7 +15,8 @@ namespace WindowsFormsSamosval
 {
     public partial class FormParking : Form
     {
-        MultiLevelParking parking;
+        Parking<ITransport, IWheels> parking;
+        MultiLevelParking parkings;
         private const int countLevel = 5;
         FormCarConfig form;
         private Logger logger;
@@ -43,7 +44,7 @@ namespace WindowsFormsSamosval
                 //если выбран один из пуктов в listBox (при старте программы ни один пункт не будет выбран и может возникнуть ошибка, если мы попытаемся обратиться к элементуlistBox)
                 Bitmap bmp = new Bitmap(pictureBoxParking.Width, pictureBoxParking.Height);
                 Graphics gr = Graphics.FromImage(bmp);
-                parking[listBoxLevels.SelectedIndex].Draw(gr);
+                parkings[listBoxLevels.SelectedIndex].Draw(gr);
                 pictureBoxParking.Image = bmp;
             }
         }
@@ -56,7 +57,7 @@ namespace WindowsFormsSamosval
                 if (dialog.ShowDialog() == DialogResult.OK)
                 {
                     var car = new SamosvalCar(100, 1000, dialog.Color, Color.Black);
-                    int place = parking[listBoxLevels.SelectedIndex] + car;
+                    int place = parkings[listBoxLevels.SelectedIndex] + car;
                     if (place == -1)
                     {
                         MessageBox.Show("Нет свободных мест", "Ошибка",
@@ -78,8 +79,8 @@ namespace WindowsFormsSamosval
                     if (dialogDop.ShowDialog() == DialogResult.OK)
                     {
                         var car = new SuperSamosval(100, 1000, dialog.Color,
-                       dialogDop.Color, true, true);
-                        int place = parking[listBoxLevels.SelectedIndex] + car;
+                       dialogDop.Color, true, true, CountWheels.Three, "sq", Color.Black);
+                        int place = parkings[listBoxLevels.SelectedIndex] + car;
                         if (place == -1)
                         {
                             MessageBox.Show("Нет свободных мест", "Ошибка",
@@ -97,7 +98,9 @@ namespace WindowsFormsSamosval
             {
                 if (maskedTextBox.Text != "")
                 {
-                    try
+                    var car = parkings[listBoxLevels.SelectedIndex] -
+                   Convert.ToInt32(maskedTextBox.Text);
+                    if (car != null)
                     {
                         var car = parking[listBoxLevels.SelectedIndex] -
                        Convert.ToInt32(maskedTextBox.Text);
