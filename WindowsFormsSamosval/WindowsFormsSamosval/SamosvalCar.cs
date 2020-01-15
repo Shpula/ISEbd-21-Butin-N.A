@@ -11,7 +11,7 @@ namespace WindowsFormsSamosval
     {
         private const int carWidth = 100;
         private const int carHeight = 60;
-   
+
         public SamosvalCar(int maxSpeed, float weight, Color mainColor, Color dopColor)
         {
             MaxSpeed = maxSpeed;
@@ -66,6 +66,7 @@ namespace WindowsFormsSamosval
                     break;
             }
         }
+
         public override void DrawCar(Graphics g)
         {
             Pen pen = new Pen(Color.Black);
@@ -82,7 +83,6 @@ namespace WindowsFormsSamosval
             g.FillRectangle(mainBrush, _startPosX + 65, _startPosY - 30 + 50, 50, 30);
             //Стекло
             g.FillRectangle(dopBrush, _startPosX + 85, _startPosY - 45 + 50, 10, 15);
-        
         }
 
         public override string ToString()

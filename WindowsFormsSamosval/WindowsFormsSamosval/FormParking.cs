@@ -66,7 +66,7 @@ namespace WindowsFormsSamosval
                 }
             }
         }
-        
+
         private void buttonSetSuperSamosval_Click(object sender, EventArgs e)
         {
             if (listBoxLevels.SelectedIndex > -1)
@@ -164,7 +164,7 @@ namespace WindowsFormsSamosval
             }
         }
 
-        private void listBox_SelectedIndexChanged(object sender, EventArgs e)
+        private void listBoxLevels_SelectedIndexChanged(object sender, EventArgs e)
         {
             Draw();
         }

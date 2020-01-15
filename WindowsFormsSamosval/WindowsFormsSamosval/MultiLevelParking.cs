@@ -22,7 +22,7 @@ namespace WindowsFormsSamosval
         /// Сколько мест на каждом уровне
         /// </summary>
         private const int countPlaces = 15;
-
+      
         /// <summary>
         /// Конструктор
         /// </summary>
@@ -55,12 +55,12 @@ namespace WindowsFormsSamosval
                 return null;
             }
         }
+
         /// <summary>
         /// Сохранение информации по автомобилям на парковках в файл
         /// </summary>
         /// <param name="filename">Путь и имя файла</param>
         /// <returns></returns>
-
         public bool SaveData(string filename)
         {
             if (File.Exists(filename))
