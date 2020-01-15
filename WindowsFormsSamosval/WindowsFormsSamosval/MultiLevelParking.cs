@@ -67,27 +67,24 @@ namespace WindowsFormsSamosval
             {
                 File.Delete(filename);
             }
-            using (FileStream fs = new FileStream(filename, FileMode.Create))
+            using (StreamWriter sw = new StreamWriter(filename))
             {
-                WriteToFile("CountLeveles:" + parkingStages.Count + Environment.NewLine, fs);
+                sw.WriteLine("CountLevels:" + parkingStages.Count);
                 foreach (var level in parkingStages)
                 {
-                    WriteToFile("Level" + Environment.NewLine, fs);
-                    foreach (ITransport car in level)
+                    sw.WriteLine("Level");
+                    for (int i = 0; i < countPlaces; i++)
                     {
-                        for (int i = 0; i < countPlaces; i++)
+                        var car = level[i];
+                        if (car != null)
                         {
-                            if (car != null)
+                            if (car.GetType().Name == "SamosvalCar")
                             {
-                                if (car.GetType().Name == "SamosvalCar")
-                                {
-                                    WriteToFile(i + ":SamosvalCar:" + car, fs);
-                                }
-                                if (car.GetType().Name == "SuperSamosval")
-                                {
-                                    WriteToFile(i + ":SuperSamosval:" + car, fs);
-                                }
-                                WriteToFile(car + Environment.NewLine, fs);
+                                sw.WriteLine(i + ":SamosvalCar:" + car);
+                            }
+                            if (car.GetType().Name == "SuperSamosval")
+                            {
+                                sw.WriteLine(i + ":SuperSamosval:" + car);
                             }
                         }
                     }
@@ -95,6 +92,7 @@ namespace WindowsFormsSamosval
             }
             return true;
         }
+
 
         /// <summary>
         /// Загрузка нформации по автомобилям на парковках из файла
