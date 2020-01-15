@@ -4,13 +4,14 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WindowsFormSamosval;
 
 namespace WindowsFormsSamosval
 {
     public class SamosvalCar
     {
-        private float _startPosX;
-        private float _startPosY;
+        public static float _startPosX;
+        public static float _startPosY;
         private int _pictureWidth;
         private int _pictureHeight;
         private const int carWidth = 100;
@@ -21,6 +22,7 @@ namespace WindowsFormsSamosval
         public Color DopColor { private set; get; }
         public bool MainPipe { private set; get; }
         public bool Container { private set; get; }
+      
         public SamosvalCar(int maxSpeed, float weight, Color mainColor, Color dopColor, bool mainPipe
             , bool container)
         {
@@ -31,6 +33,7 @@ namespace WindowsFormsSamosval
             MainPipe = mainPipe;
             Container = container;
         }
+      
         public void SetPosition(int x, int y, int width, int height)
         {
             _startPosX = x;
@@ -38,6 +41,7 @@ namespace WindowsFormsSamosval
             _pictureWidth = width;
             _pictureHeight = height;
         }
+      
         public void MoveTransport(Direction direction)
         {
             float step = MaxSpeed * 100 / Weight;
@@ -73,12 +77,12 @@ namespace WindowsFormsSamosval
                     break;
             }
         }
+      
         public void DrawCar(Graphics g)
         {
             Pen pen = new Pen(Color.Black);
             Brush brush = new SolidBrush(Color.Black);
             Brush brush1 = new SolidBrush(Color.Orange);
-
             //Колёса
             g.FillEllipse(brush, _startPosX, _startPosY, 20, 20);
             g.FillEllipse(brush, _startPosX + 30, _startPosY, 20, 20);
@@ -94,6 +98,7 @@ namespace WindowsFormsSamosval
             g.FillRectangle(brush1, _startPosX - 5, _startPosY - 50, 60, 40);
             //Труба 
             g.FillRectangle(brush, _startPosX + 63, _startPosY - 60, 5, 35  );
+            DrawKolesa drawGuns = new DrawKolesa(Kolesa.Four, _startPosX, _startPosY);
         }
     }
 }
