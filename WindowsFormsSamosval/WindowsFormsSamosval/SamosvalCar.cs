@@ -72,6 +72,7 @@ namespace WindowsFormsSamosval
             Pen pen = new Pen(Color.Black);
             Brush dopBrush = new SolidBrush(Color.Black);
             Brush mainBrush = new SolidBrush(MainColor);
+
             //Колёса
             g.FillEllipse(dopBrush, _startPosX, _startPosY + 50, 20, 20);
             g.FillEllipse(dopBrush, _startPosX + 30, _startPosY + 50, 20, 20);
@@ -89,7 +90,6 @@ namespace WindowsFormsSamosval
         {
             return MaxSpeed + ";" + Weight + ";" + MainColor.Name;
         }
-
         public int CompareTo(SamosvalCar other)
         {
             if (other == null)
@@ -123,7 +123,7 @@ namespace WindowsFormsSamosval
                 return false;
             }
             if (GetType().Name != other.GetType().Name)
-        {
+            {
                 return false;
             }
             if (MaxSpeed != other.MaxSpeed)
@@ -169,11 +169,6 @@ namespace WindowsFormsSamosval
         public override int GetHashCode()
         {
             return base.GetHashCode();
-        }
-
-        public override string ToString()
-        {
-            return MaxSpeed + ";" + Weight + ";" + MainColor;
         }
     }
 }

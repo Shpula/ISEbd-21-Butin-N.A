@@ -33,10 +33,8 @@
             this.pictureBoxTakeCar = new System.Windows.Forms.PictureBox();
             this.maskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.labelPlace = new System.Windows.Forms.Label();
-            this.buttonSetSamosval = new System.Windows.Forms.Button();
-            this.buttonSetSuperSamosval = new System.Windows.Forms.Button();
-            this.labelTakeCar = new System.Windows.Forms.Label();
             this.buttonTakeCar = new System.Windows.Forms.Button();
+            this.labelTakeCar = new System.Windows.Forms.Label();
             this.listBoxLevels = new System.Windows.Forms.ListBox();
             this.buttonSetCar = new System.Windows.Forms.Button();
             this.menuStrip = new System.Windows.Forms.MenuStrip();
@@ -55,9 +53,9 @@
             // pictureBoxParking
             // 
             this.pictureBoxParking.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pictureBoxParking.Location = new System.Drawing.Point(0, 36);
+            this.pictureBoxParking.Location = new System.Drawing.Point(0, 33);
             this.pictureBoxParking.Name = "pictureBoxParking";
-            this.pictureBoxParking.Size = new System.Drawing.Size(839, 708);
+            this.pictureBoxParking.Size = new System.Drawing.Size(839, 711);
             this.pictureBoxParking.TabIndex = 0;
             this.pictureBoxParking.TabStop = false;
             // 
@@ -73,26 +71,6 @@
             this.groupBoxTakeCar.TabIndex = 3;
             this.groupBoxTakeCar.TabStop = false;
             this.groupBoxTakeCar.Text = "Забрать машину";
-            //
-            // buttonSetSamosval
-            // 
-            this.buttonSetSamosval.Location = new System.Drawing.Point(1030, 208);
-            this.buttonSetSamosval.Name = "buttonSetSamosval";
-            this.buttonSetSamosval.Size = new System.Drawing.Size(127, 84);
-            this.buttonSetSamosval.TabIndex = 1;
-            this.buttonSetSamosval.Text = "Припарковать самосвал";
-            this.buttonSetSamosval.UseVisualStyleBackColor = true;
-            this.buttonSetSamosval.Click += new System.EventHandler(this.buttonSetSamosval_Click);
-            // 
-            // buttonSetSuperSamosval
-            // 
-            this.buttonSetSuperSamosval.Location = new System.Drawing.Point(872, 208);
-            this.buttonSetSuperSamosval.Name = "buttonSetSuperSamosval";
-            this.buttonSetSuperSamosval.Size = new System.Drawing.Size(127, 84);
-            this.buttonSetSuperSamosval.TabIndex = 2;
-            this.buttonSetSuperSamosval.Text = "Припарковать супер самосвал";
-            this.buttonSetSuperSamosval.UseVisualStyleBackColor = true;
-            this.buttonSetSuperSamosval.Click += new System.EventHandler(this.buttonSetSuperSamosval_Click);
             // 
             // pictureBoxTakeCar
             // 
@@ -104,7 +82,7 @@
             // 
             // maskedTextBox
             // 
-            this.maskedTextBox.Location = new System.Drawing.Point(160, 47);
+            this.maskedTextBox.Location = new System.Drawing.Point(151, 58);
             this.maskedTextBox.Name = "maskedTextBox";
             this.maskedTextBox.Size = new System.Drawing.Size(60, 26);
             this.maskedTextBox.TabIndex = 7;
@@ -112,11 +90,20 @@
             // labelPlace
             // 
             this.labelPlace.AutoSize = true;
-            this.labelPlace.Location = new System.Drawing.Point(84, 70);
+            this.labelPlace.Location = new System.Drawing.Point(84, 61);
             this.labelPlace.Name = "labelPlace";
             this.labelPlace.Size = new System.Drawing.Size(61, 20);
             this.labelPlace.TabIndex = 6;
             this.labelPlace.Text = "Место:";
+            // 
+            // buttonTakeCar
+            // 
+            this.buttonTakeCar.Location = new System.Drawing.Point(120, 90);
+            this.buttonTakeCar.Name = "buttonTakeCar";
+            this.buttonTakeCar.Size = new System.Drawing.Size(85, 31);
+            this.buttonTakeCar.TabIndex = 4;
+            this.buttonTakeCar.Text = "Забрать";
+            this.buttonTakeCar.Click += new System.EventHandler(this.buttonTakeCar_Click);
             // 
             // labelTakeCar
             // 
@@ -126,14 +113,6 @@
             this.labelTakeCar.Size = new System.Drawing.Size(136, 20);
             this.labelTakeCar.TabIndex = 5;
             this.labelTakeCar.Text = "Забрать машину";
-            // 
-            // buttonTakeCar
-            // 
-            this.buttonTakeCar.Location = new System.Drawing.Point(120, 90);
-            this.buttonTakeCar.Name = "buttonTakeCar";
-            this.buttonTakeCar.Size = new System.Drawing.Size(85, 31);
-            this.buttonTakeCar.TabIndex = 4;
-            this.buttonTakeCar.Text = "Забрать";
             // 
             // listBoxLevels
             // 
@@ -163,7 +142,7 @@
             this.файлToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
-            this.menuStrip.Size = new System.Drawing.Size(1178, 36);
+            this.menuStrip.Size = new System.Drawing.Size(1178, 33);
             this.menuStrip.TabIndex = 6;
             this.menuStrip.Text = "menuStrip1";
             // 
@@ -173,7 +152,7 @@
             this.сохранитьToolStripMenuItem,
             this.загрузитьToolStripMenuItem});
             this.файлToolStripMenuItem.Name = "файлToolStripMenuItem";
-            this.файлToolStripMenuItem.Size = new System.Drawing.Size(69, 32);
+            this.файлToolStripMenuItem.Size = new System.Drawing.Size(69, 29);
             this.файлToolStripMenuItem.Text = "Файл";
             // 
             // сохранитьToolStripMenuItem
@@ -189,15 +168,6 @@
             this.загрузитьToolStripMenuItem.Size = new System.Drawing.Size(200, 34);
             this.загрузитьToolStripMenuItem.Text = "Загрузить";
             this.загрузитьToolStripMenuItem.Click += new System.EventHandler(this.загрузитьToolStripMenuItem_Click);
-            // 
-            // saveFileParking
-            // 
-            this.saveFileParking.Filter = "txt file | *.txt";
-            // 
-            // openFileParking
-            // 
-            this.openFileParking.FileName = "openFileDialog";
-            this.openFileParking.Filter = "txt file | *.txt";
             // 
             // buttonSort
             // 
@@ -218,8 +188,6 @@
             this.Controls.Add(this.buttonSetCar);
             this.Controls.Add(this.listBoxLevels);
             this.Controls.Add(this.groupBoxTakeCar);
-            this.Controls.Add(this.buttonSetSuperSamosval);
-            this.Controls.Add(this.buttonSetSamosval);
             this.Controls.Add(this.pictureBoxParking);
             this.Controls.Add(this.menuStrip);
             this.MainMenuStrip = this.menuStrip;
@@ -233,14 +201,13 @@
             this.menuStrip.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
 
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBoxParking;
         private System.Windows.Forms.GroupBox groupBoxTakeCar;
-        private System.Windows.Forms.Button buttonSetSamosval;
-        private System.Windows.Forms.Button buttonSetSuperSamosval;
         private System.Windows.Forms.Label labelTakeCar;
         private System.Windows.Forms.Button buttonTakeCar;
         private System.Windows.Forms.PictureBox pictureBoxTakeCar;
