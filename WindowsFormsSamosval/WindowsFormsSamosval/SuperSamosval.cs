@@ -40,6 +40,7 @@ namespace WindowsFormsSamosval
         {
             Brush dopBrush = new SolidBrush(DopColor);
             base.DrawCar(g);
+
             if (MainPipe)
             {
                 g.FillRectangle(dopBrush, _startPosX + 63, _startPosY - 60 + 40, 5, 35);
