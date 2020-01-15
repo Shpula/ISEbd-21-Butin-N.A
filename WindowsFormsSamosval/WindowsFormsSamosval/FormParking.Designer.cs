@@ -32,6 +32,7 @@
             this.buttonSetSamosval = new System.Windows.Forms.Button();
             this.buttonSetSuperSamosval = new System.Windows.Forms.Button();
             this.TakeCarGroup = new System.Windows.Forms.GroupBox();
+            this.buttonFindMatches = new System.Windows.Forms.Button();
             this.pictureBoxTakeCar = new System.Windows.Forms.PictureBox();
             this.maskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -73,6 +74,7 @@
             // 
             // TakeCarGroup
             // 
+            this.TakeCarGroup.Controls.Add(this.buttonFindMatches);
             this.TakeCarGroup.Controls.Add(this.pictureBoxTakeCar);
             this.TakeCarGroup.Controls.Add(this.maskedTextBox);
             this.TakeCarGroup.Controls.Add(this.label2);
@@ -85,6 +87,16 @@
             this.TakeCarGroup.TabStop = false;
             this.TakeCarGroup.Text = "Забрать машину";
             // 
+            // buttonFindMatches
+            // 
+            this.buttonFindMatches.Location = new System.Drawing.Point(225, 116);
+            this.buttonFindMatches.Name = "buttonFindMatches";
+            this.buttonFindMatches.Size = new System.Drawing.Size(85, 31);
+            this.buttonFindMatches.TabIndex = 9;
+            this.buttonFindMatches.Text = "Сравнить";
+            this.buttonFindMatches.UseVisualStyleBackColor = true;
+            this.buttonFindMatches.Click += new System.EventHandler(this.buttonFindMatches_Click);
+            // 
             // pictureBoxTakeCar
             // 
             this.pictureBoxTakeCar.Location = new System.Drawing.Point(0, 153);
@@ -95,7 +107,7 @@
             // 
             // maskedTextBox
             // 
-            this.maskedTextBox.Location = new System.Drawing.Point(160, 67);
+            this.maskedTextBox.Location = new System.Drawing.Point(180, 70);
             this.maskedTextBox.Name = "maskedTextBox";
             this.maskedTextBox.Size = new System.Drawing.Size(60, 26);
             this.maskedTextBox.TabIndex = 7;
@@ -158,5 +170,6 @@
         private System.Windows.Forms.PictureBox pictureBoxTakeCar;
         private System.Windows.Forms.MaskedTextBox maskedTextBox;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button buttonFindMatches;
     }
 }
