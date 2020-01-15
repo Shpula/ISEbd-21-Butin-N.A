@@ -1,5 +1,4 @@
-﻿
-using NLog;
+﻿using NLog;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -35,6 +34,7 @@ namespace WindowsFormsSamosval
             }
             listBoxLevels.SelectedIndex = 0;
         }
+
         private void Draw()
         {
             if (listBoxLevels.SelectedIndex > -1)
@@ -45,8 +45,8 @@ namespace WindowsFormsSamosval
                 parking[listBoxLevels.SelectedIndex].Draw(gr);
                 pictureBoxParking.Image = bmp;
             }
-
         }
+
         private void buttonSetSamosval_Click(object sender, EventArgs e)
         {
             if (listBoxLevels.SelectedIndex > -1)
@@ -65,6 +65,7 @@ namespace WindowsFormsSamosval
                 }
             }
         }
+
         private void buttonSetSuperSamosval_Click(object sender, EventArgs e)
         {
             if (listBoxLevels.SelectedIndex > -1)
@@ -162,8 +163,6 @@ namespace WindowsFormsSamosval
             }
         }
 
-
-
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             Draw();
@@ -195,7 +194,6 @@ namespace WindowsFormsSamosval
                 Draw();
             }
         }
-
 
         private void сохранитьToolStripMenuItem_Click(object sender, EventArgs e)
         {

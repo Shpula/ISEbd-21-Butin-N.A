@@ -18,11 +18,9 @@ namespace WindowsFormsSamosval
         List<Parking<ITransport>> parkingStages;
         private int pictureHeight;
         private int pictureWidth;
-
         /// <summary>
         /// Сколько мест на каждом уровне
         /// </summary>
-
         private const int countPlaces = 15;
         /// <summary>
         /// Конструктор
@@ -39,6 +37,7 @@ namespace WindowsFormsSamosval
                pictureHeight));
             }
         }
+
         /// <summary>
         /// Индексатор
         /// </summary>
@@ -55,12 +54,12 @@ namespace WindowsFormsSamosval
                 return null;
             }
         }
+
         /// <summary>
         /// Сохранение информации по автомобилям на парковках в файл
         /// </summary>
         /// <param name="filename">Путь и имя файла</param>
         /// <returns></returns>
-
         public bool SaveData(string filename)
         {
             if (File.Exists(filename))
@@ -95,6 +94,7 @@ namespace WindowsFormsSamosval
             }
             return true;
         }
+
         /// <summary>
         /// Метод записи информации в файл
         /// </summary>
@@ -105,12 +105,12 @@ namespace WindowsFormsSamosval
             byte[] info = new UTF8Encoding(true).GetBytes(text);
             stream.Write(info, 0, info.Length);
         }
+
         /// <summary>
         /// Загрузка нформации по автомобилям на парковках из файла
         /// </summary>
         /// <param name="filename"></param>
         /// <returns></returns>
-
         public bool LoadData(string filename)
         {
             if (!File.Exists(filename))
@@ -166,10 +166,10 @@ namespace WindowsFormsSamosval
                 return true;
             }
         }
+
         public void Sort()
         {
             parkingStages.Sort();
         }
-
     }
 }

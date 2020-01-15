@@ -52,8 +52,8 @@ namespace WindowsFormsSamosval
             {
                 g.FillRectangle(dopBrush, _startPosX - 5, _startPosY - 50 + 50, 60, 40);
             }
-
         }
+
         public void SetDopColor(Color color)
         {
             DopColor = color;
@@ -84,6 +84,7 @@ namespace WindowsFormsSamosval
             }
             return 0;
         }
+
         /// <summary>
         /// Метод интерфейса IEquatable для класса SportCar
         /// </summary>
@@ -114,6 +115,7 @@ namespace WindowsFormsSamosval
             }
             return true;
         }
+
         /// <summary>
         /// Перегрузка метода от object
         /// </summary>
@@ -134,6 +136,7 @@ namespace WindowsFormsSamosval
                 return Equals(carObj);
             }
         }
+
         /// <summary>
         /// Перегрузка метода от object
         /// </summary>

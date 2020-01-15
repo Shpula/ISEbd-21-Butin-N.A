@@ -9,18 +9,17 @@ using WindowsFormsCars;
 
 namespace WindowsFormsSamosval
 {
-
     public class Parking<T> : IEnumerator<T>, IEnumerable<T>, IComparable<Parking<T>>
         where T : class, ITransport
     {
         private Dictionary<int, T> _places;
         private int _maxCount;
-
         private int PictureWidth { get; set; }
         private int PictureHeight { get; set; }
         private const int _placeSizeWidth = 210;
         private const int _placeSizeHeight = 80;
         private int _currentIndex;
+
         public Parking(int sizes, int pictureWidth, int pictureHeight)
         {
             _maxCount = sizes;
@@ -28,6 +27,7 @@ namespace WindowsFormsSamosval
             PictureWidth = pictureWidth;
             PictureHeight = pictureHeight;
         }
+
         public static int operator +(Parking<T> p, T car)
         {
             if (p._places.Count == p._maxCount)
@@ -51,6 +51,7 @@ namespace WindowsFormsSamosval
             }
             return -1;
         }
+
         /// <summary>
         /// Перегрузка оператора вычитания
         /// Логика действия: с парковки забираем автомобиль
@@ -87,6 +88,7 @@ namespace WindowsFormsSamosval
                 _places[keys[i]].DrawCar(g);
             }
         }
+
         /// <summary>
         /// Метод отрисовки разметки парковочных мест
         /// </summary>
@@ -106,6 +108,7 @@ namespace WindowsFormsSamosval
                 g.DrawLine(pen, i * _placeSizeWidth, 0, i * _placeSizeWidth, 400);
             }
         }
+
         public T this[int ind]
         {
             get
@@ -130,6 +133,7 @@ namespace WindowsFormsSamosval
                 }
             }
         }
+
         /// <summary>
         /// Метод интерфейса IEnumerator для получения текущего элемента
         /// </summary>
@@ -140,6 +144,7 @@ namespace WindowsFormsSamosval
                 return _places[_places.Keys.ToList()[_currentIndex]];
             }
         }
+
         /// <summary>
         /// Метод интерфейса IEnumerator для получения текущего элемента
         /// </summary>
@@ -158,6 +163,7 @@ namespace WindowsFormsSamosval
         {
             _places.Clear();
         }
+
         /// <summary>
         /// Метод интерфейса IEnumerator для перехода к следующему элементу или началу коллекции
         /// </summary>
@@ -172,6 +178,7 @@ namespace WindowsFormsSamosval
             _currentIndex++;
             return true;
         }
+
         /// <summary>
         /// Метод интерфейса IEnumerator для сброса и возврата к началу коллекции
         /// </summary>
@@ -179,6 +186,7 @@ namespace WindowsFormsSamosval
         {
             _currentIndex = -1;
         }
+
         /// <summary>
         /// Метод интерфейса IEnumerable
         /// </summary>
@@ -187,6 +195,7 @@ namespace WindowsFormsSamosval
         {
             return this;
         }
+
         /// <summary>
         /// Метод интерфейса IEnumerable
         /// </summary>
@@ -195,6 +204,7 @@ namespace WindowsFormsSamosval
         {
             return GetEnumerator();
         }
+
         /// <summary>
         /// Метод интерфейса IComparable
         /// </summary>
