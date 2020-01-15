@@ -106,9 +106,10 @@
             this.labelPlace.AutoSize = true;
             this.labelPlace.Location = new System.Drawing.Point(84, 70);
             this.labelPlace.Name = "labelPlace";
-            this.labelPlace.Size = new System.Drawing.Size(70, 20);
+            this.labelPlace.Size = new System.Drawing.Size(61, 20);
             this.labelPlace.TabIndex = 6;
-            this.labelPlace.Text = "Местро:";
+            this.labelPlace.Text = "Место:";
+
             // 
             // labelTakeCar
             // 
