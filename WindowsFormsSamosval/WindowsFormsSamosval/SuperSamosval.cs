@@ -12,7 +12,6 @@ namespace WindowsFormsSamosval
         public Color DopColor { private set; get; }
         public bool MainPipe { private set; get; }
         public bool Container { private set; get; }
-
         public CountWheels Wheels { private set; get; }
         public string WheelsForm;
         public Color WheelsColor { private set; get; }
@@ -28,6 +27,7 @@ namespace WindowsFormsSamosval
             WheelsForm = wheelsForm;
             WheelsColor = wheelColor;
         }
+
         public override void DrawCar(Graphics g)
         {
             Pen pen = new Pen(Color.Black);
