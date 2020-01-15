@@ -89,5 +89,10 @@ namespace WindowsFormsSamosval
         {
             return MaxSpeed + ";" + Weight + ";" + MainColor.Name;
         }
+
+        public override string ToString()
+        {
+            return MaxSpeed + ";" + Weight + ";" + MainColor;
+        }
     }
 }

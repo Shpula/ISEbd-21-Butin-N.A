@@ -31,10 +31,10 @@ namespace WindowsFormsSamosval
         /// <param name="pictureHeight"></param>
         public MultiLevelParking(int countStages, int pictureWidth, int pictureHeight)
         {
-            parkingStages = new List<Parking<ITransport>>();
+            parkingStages = new List<Parking<ITransport, IWheels>>();
             for (int i = 0; i < countStages; ++i)
             {
-                parkingStages.Add(new Parking<ITransport>(countPlaces, pictureWidth,
+                parkingStages.Add(new Parking<ITransport , IWheels>(countPlaces, pictureWidth,
                pictureHeight));
             }
         }
@@ -44,7 +44,7 @@ namespace WindowsFormsSamosval
         /// </summary>
         /// <param name="ind"></param>
         /// <returns></returns>
-        public Parking<ITransport> this[int ind]
+        public Parking<ITransport, IWheels> this[int ind]
         {
             get
             {
@@ -162,6 +162,16 @@ namespace WindowsFormsSamosval
                     }
                 }
                 return true;
+
+        public ITransport this[int ind, int key]
+        {
+            get
+            {
+                if (ind > -1 && ind < parkingStages.Count)
+                {
+                    return parkingStages[ind].GetCarByKey(key);
+                }
+                return null;
             }
         }
     }
