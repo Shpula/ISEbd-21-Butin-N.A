@@ -21,7 +21,7 @@ namespace WindowsFormsSamosval
             MainPipe = mainPipe;
             Container = container;
         }
-
+        
         public SuperSamosval(string info) : base(info)
         {
             string[] strs = info.Split(';');

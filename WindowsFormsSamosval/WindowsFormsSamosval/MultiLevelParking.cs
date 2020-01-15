@@ -54,7 +54,6 @@ namespace WindowsFormsSamosval
                 return null;
             }
         }
-
         /// <summary>
         /// Сохранение информации по автомобилям на парковках в файл
         /// </summary>
