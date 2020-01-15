@@ -134,9 +134,44 @@ namespace WindowsFormsSamosval
             }
         }
 
-        private void listBox_SelectedIndexChanged(object sender, EventArgs e)
+        private void listBoxLevels_SelectedIndexChanged(object sender, EventArgs e)
         {
             Draw();
+        }
+
+        private void загрузитьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (openFileParking.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                if (parking.LoadData(openFileParking.FileName))
+                {
+                    MessageBox.Show("Загрузили", "Результат", MessageBoxButtons.OK,
+    MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Не загрузили", "Результат", MessageBoxButtons.OK,
+                   MessageBoxIcon.Error);
+                }
+                Draw();
+            }
+        }
+
+        private void сохранитьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (saveFileParking.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                if (parking.SaveData(saveFileParking.FileName))
+                {
+                    MessageBox.Show("Сохранение прошло успешно", "Результат",
+                   MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Не сохранилось", "Результат",
+                   MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
     }
 }

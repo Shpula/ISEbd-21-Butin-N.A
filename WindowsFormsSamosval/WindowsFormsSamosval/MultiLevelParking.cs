@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,11 +16,12 @@ namespace WindowsFormsSamosval
         /// Список с уровнями парковки
         /// </summary>
         List<Parking<ITransport>> parkingStages;
+        private int pictureHeight;
+        private int pictureWidth;
         /// <summary>
         /// Сколько мест на каждом уровне
         /// </summary>
         private const int countPlaces = 20;
-
         /// <summary>
         /// Конструктор
         /// </summary>
@@ -50,6 +52,103 @@ namespace WindowsFormsSamosval
                     return parkingStages[ind];
                 }
                 return null;
+            }
+        }
+        /// <summary>
+        /// Сохранение информации по автомобилям на парковках в файл
+        /// </summary>
+        /// <param name="filename">Путь и имя файла</param>
+        /// <returns></returns>
+        public bool SaveData(string filename)
+        {
+            if (File.Exists(filename))
+            {
+                File.Delete(filename);
+            }
+            using (StreamWriter sw = new StreamWriter(filename))
+            {
+                sw.WriteLine("CountLevels:" + parkingStages.Count);
+                foreach (var level in parkingStages)
+                {
+                    sw.WriteLine("Level");
+                    for (int i = 0; i < countPlaces; i++)
+                    {
+                        var car = level[i];
+                        if (car != null)
+                        {
+                            if (car.GetType().Name == "SamosvalCar")
+                            {
+                                sw.WriteLine(i + ":SamosvalCar:" + car);
+                            }
+                            if (car.GetType().Name == "SuperSamosval")
+                            {
+                                sw.WriteLine(i + ":SuperSamosval:" + car);
+                            }
+                        }
+                    }
+                }
+            }
+            return true;
+        }
+
+        /// <summary>
+        /// Загрузка нформации по автомобилям на парковках из файла
+        /// </summary>
+        /// <param name="filename"></param>
+        /// <returns></returns>
+        public bool LoadData(string filename)
+        {
+            if (!File.Exists(filename))
+            {
+                return false;
+            }
+            int counter = -1;
+            ITransport car = null;
+            using (StreamReader sr = new StreamReader(filename))
+            {
+                string line = sr.ReadLine();
+                int count;
+                bool isValid = line.Contains("CountLevels");
+                if (isValid)
+                {
+                    count = Convert.ToInt32(line.Split(':')[1]);
+                    if (parkingStages != null)
+                    {
+                        parkingStages.Clear();
+                    }
+                    parkingStages = new List<Parking<ITransport>>(count);
+                }
+                else
+                {
+                    return false;
+                }
+                while ((line = sr.ReadLine()) != null)
+                {
+                    if (line == "Level")
+                    {
+                        counter++;
+                        parkingStages.Add(new Parking<ITransport>(countPlaces, pictureWidth, pictureHeight));
+                        continue;
+                    }
+                    if (string.IsNullOrEmpty(line))
+                    {
+                        continue;
+                    }
+                    string[] splitLine = line.Split(':');
+                    if (splitLine.Length > 2)
+                    {
+                        if (splitLine[1] == "SamosvalCar")
+                        {
+                            car = new SamosvalCar(splitLine[2]);
+                        }
+                        else
+                        {
+                            car = new SuperSamosval(splitLine[2]);
+                        }
+                        parkingStages[counter][Convert.ToInt32(splitLine[0])] = car;
+                    }
+                }
+                return true;
             }
         }
     }
