@@ -66,11 +66,10 @@ namespace WindowsFormsSamosval
             }
             return true;
         }
-
+        
         public Parking(int sizes, int pictureWidth, int pictureHeight)
         {
             _maxCount = sizes;
-            _places = new Dictionary<int, T>();
             removedCar = new Stack<T>();
             PictureWidth = pictureWidth;
             PictureHeight = pictureHeight;
@@ -129,7 +128,6 @@ namespace WindowsFormsSamosval
         {
             return _places.ContainsKey(key) ? _places[key] : null;
         }
-
         private bool CheckFreePlace(int index)
         {
             return !_places.ContainsKey(index);
