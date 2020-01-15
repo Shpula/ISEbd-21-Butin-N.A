@@ -125,7 +125,7 @@
             this.Controls.Add(this.pictureBoxSamosval);
             this.Name = "SamosvalForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form";
+            this.Text = "Самосвал";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSamosval)).EndInit();
             this.ResumeLayout(false);
 
