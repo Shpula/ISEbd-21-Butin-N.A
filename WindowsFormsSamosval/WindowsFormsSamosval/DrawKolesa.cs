@@ -9,22 +9,24 @@ using WindowsFormsSamosval;
 namespace WindowsFormSamosval
 {
     public class DrawKolesa
-
     {
         public Kolesa kolesa { private get; set; }
 
         private float x;
         private float y;
+
         public DrawKolesa(Kolesa numberOfKoleso, float _startPosX, float _startPosY)
         {
             kolesa = numberOfKoleso;
             x = _startPosX;
             y = _startPosY;
         }
+
         private int ConvertToInt(Kolesa numberOfKoleso)
         {
             return (int)numberOfKoleso + 2;
         }
+
         public void KolesaDraw(Graphics g)
         {
             for (int i = 0; i < ConvertToInt(kolesa); i++)
@@ -36,8 +38,5 @@ namespace WindowsFormSamosval
                 kist.Dispose();
             }
         }
-
     }
-
-
 }
