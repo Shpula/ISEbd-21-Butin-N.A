@@ -150,7 +150,7 @@
             this.Controls.Add(this.buttonSetSamosval);
             this.Controls.Add(this.pictureBoxParking);
             this.Name = "FormParking";
-            this.Text = "FormParking";
+            this.Text = "Парковка";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxParking)).EndInit();
             this.TakeCarGroup.ResumeLayout(false);
             this.TakeCarGroup.PerformLayout();
