@@ -74,11 +74,11 @@ namespace WindowsFormsSamosval
             g.FillRectangle(mainBrush, _startPosX + 65, _startPosY - 30 + 40, 50, 30);
             //Стекло
             g.FillRectangle(dopBrush, _startPosX + 85, _startPosY - 45 + 40 ,10, 15);
-            g.FillRectangle(brush, _startPosX + 85, _startPosY - 45, 10, 15);
+            g.FillRectangle(dopBrush, _startPosX + 85, _startPosY - 45, 10, 15);
             //Контейнер
-            g.FillRectangle(brush1, _startPosX - 5, _startPosY - 50, 60, 40);
+            g.FillRectangle(dopBrush, _startPosX - 5, _startPosY - 50, 60, 40);
             //Труба 
-            g.FillRectangle(brush, _startPosX + 63, _startPosY - 60, 5, 35  );
+            g.FillRectangle(dopBrush, _startPosX + 63, _startPosY - 60, 5, 35  );
         }
 
         public override string ToString()

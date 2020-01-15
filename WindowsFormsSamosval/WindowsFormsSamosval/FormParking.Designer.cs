@@ -137,16 +137,6 @@
             this.listBoxLevels.TabIndex = 4;
             this.listBoxLevels.SelectedIndexChanged += new System.EventHandler(this.listBox_SelectedIndexChanged);
             // 
-            // listBoxLevels
-            // 
-            this.listBoxLevels.FormattingEnabled = true;
-            this.listBoxLevels.ItemHeight = 20;
-            this.listBoxLevels.Location = new System.Drawing.Point(872, 13);
-            this.listBoxLevels.Name = "listBoxLevels";
-            this.listBoxLevels.Size = new System.Drawing.Size(285, 164);
-            this.listBoxLevels.TabIndex = 4;
-            this.listBoxLevels.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
-            // 
             // FormParking
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -154,7 +144,6 @@
             this.ClientSize = new System.Drawing.Size(1178, 744);
             this.Controls.Add(this.listBoxLevels);
             this.Controls.Add(this.TakeCarGroup);
-            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.buttonSetSuperSamosval);
             this.Controls.Add(this.buttonSetSamosval);
             this.Controls.Add(this.pictureBoxParking);
