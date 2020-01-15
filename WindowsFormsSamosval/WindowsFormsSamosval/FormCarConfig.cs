@@ -21,6 +21,7 @@ namespace WindowsFormsSamosval
             panelYellow.MouseDown += panelColor_MouseDown;
             buttonCancel.Click += (object sender, EventArgs e) => { Close(); };
         }
+
         private void panelColor_MouseDown(object sender, MouseEventArgs e)
         {
             (sender as Control).DoDragDrop((sender as Control).BackColor,
@@ -38,6 +39,7 @@ namespace WindowsFormsSamosval
                 e.Effect = DragDropEffects.None;
             }
         }
+
         private void labelBaseColor_DragDrop(object sender, DragEventArgs e)
         {
             if (car != null)
@@ -46,6 +48,7 @@ namespace WindowsFormsSamosval
                 DrawCar();
             }
         }
+
         private void labelDopColor_DragDrop(object sender, DragEventArgs e)
         {
             if (car != null)
@@ -70,6 +73,7 @@ namespace WindowsFormsSamosval
                 eventAddCar += ev;
             }
         }
+
         private void DrawCar()
         {
             if (car != null)
