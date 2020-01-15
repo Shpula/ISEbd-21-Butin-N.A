@@ -12,14 +12,13 @@ namespace WindowsFormsSamosval
 {
     public partial class FormParking : Form
     {
-        Parking<ITransport, IWheels> parking;
-        MultiLevelParking parkings;
+        MultiLevelParking parking;
         private const int countLevel = 5;
 
         public FormParking()
         {
             InitializeComponent();
-            parkings = new MultiLevelParking(countLevel, pictureBoxParking.Width,
+            parking = new MultiLevelParking(countLevel, pictureBoxParking.Width,
            pictureBoxParking.Height);
             //заполнение listBox
             for (int i = 0; i < countLevel; i++)
@@ -28,7 +27,6 @@ namespace WindowsFormsSamosval
             }
             listBoxLevels.SelectedIndex = 0;
         }
-
         private void Draw()
         {
             if (listBoxLevels.SelectedIndex > -1)
@@ -36,11 +34,11 @@ namespace WindowsFormsSamosval
                 //если выбран один из пуктов в listBox (при старте программы ни один пункт не будет выбран и может возникнуть ошибка, если мы попытаемся обратиться к элементуlistBox)
                 Bitmap bmp = new Bitmap(pictureBoxParking.Width, pictureBoxParking.Height);
                 Graphics gr = Graphics.FromImage(bmp);
-                parkings[listBoxLevels.SelectedIndex].Draw(gr);
+                parking[listBoxLevels.SelectedIndex].Draw(gr);
                 pictureBoxParking.Image = bmp;
             }
-        }
 
+        }
         private void buttonSetSamosval_Click(object sender, EventArgs e)
         {
             if (listBoxLevels.SelectedIndex > -1)
@@ -49,7 +47,7 @@ namespace WindowsFormsSamosval
                 if (dialog.ShowDialog() == DialogResult.OK)
                 {
                     var car = new SamosvalCar(100, 1000, dialog.Color, Color.Black);
-                    int place = parkings[listBoxLevels.SelectedIndex] + car;
+                    int place = parking[listBoxLevels.SelectedIndex] + car;
                     if (place == -1)
                     {
                         MessageBox.Show("Нет свободных мест", "Ошибка",
@@ -59,20 +57,19 @@ namespace WindowsFormsSamosval
                 }
             }
         }
-
         private void buttonSetSuperSamosval_Click(object sender, EventArgs e)
         {
             if (listBoxLevels.SelectedIndex > -1)
             {
-            ColorDialog dialog = new ColorDialog();
+                ColorDialog dialog = new ColorDialog();
                 if (dialog.ShowDialog() == DialogResult.OK)
                 {
                     ColorDialog dialogDop = new ColorDialog();
                     if (dialogDop.ShowDialog() == DialogResult.OK)
                     {
                         var car = new SuperSamosval(100, 1000, dialog.Color,
-                       dialogDop.Color, true, true, CountWheels.Three, "sq", Color.Black);
-                        int place = parkings[listBoxLevels.SelectedIndex] + car;
+                       dialogDop.Color, true, true);
+                        int place = parking[listBoxLevels.SelectedIndex] + car;
                         if (place == -1)
                         {
                             MessageBox.Show("Нет свободных мест", "Ошибка",
@@ -90,7 +87,7 @@ namespace WindowsFormsSamosval
             {
                 if (maskedTextBox.Text != "")
                 {
-                    var car = parkings[listBoxLevels.SelectedIndex] -
+                    var car = parking[listBoxLevels.SelectedIndex] -
                    Convert.ToInt32(maskedTextBox.Text);
                     if (car != null)
                     {

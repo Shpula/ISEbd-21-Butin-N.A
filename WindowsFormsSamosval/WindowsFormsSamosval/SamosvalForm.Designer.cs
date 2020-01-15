@@ -142,4 +142,3 @@
         private System.Windows.Forms.Button buttonCreateSuperSamosval;
     }
 }
-
