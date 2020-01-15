@@ -39,6 +39,8 @@ namespace WindowsFormsSamosval
         public override void DrawCar(Graphics g)
         {
             Brush dopBrush = new SolidBrush(DopColor);
+            Brush mainBrush = new SolidBrush(MainColor);
+
             base.DrawCar(g);
             if (MainPipe)
             {
