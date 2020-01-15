@@ -66,6 +66,7 @@ namespace WindowsFormsSamosval
                     break;
             }
         }
+        
         public override void DrawCar(Graphics g)
         {
             Pen pen = new Pen(Color.Black);

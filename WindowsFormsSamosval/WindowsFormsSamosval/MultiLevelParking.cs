@@ -22,7 +22,6 @@ namespace WindowsFormsSamosval
         /// Сколько мест на каждом уровне
         /// </summary>
         private const int countPlaces = 15;
-
         /// <summary>
         /// Конструктор
         /// </summary>
@@ -92,7 +91,6 @@ namespace WindowsFormsSamosval
             }
             return true;
         }
-
 
         /// <summary>
         /// Загрузка нформации по автомобилям на парковках из файла
