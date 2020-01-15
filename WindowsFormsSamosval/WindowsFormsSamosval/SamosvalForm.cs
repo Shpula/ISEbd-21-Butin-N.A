@@ -62,7 +62,7 @@ namespace WindowsFormsSamosval
         {
             Random rnd = new Random();
             car = new SuperSamosval(rnd.Next(100, 300), rnd.Next(1000, 2000), Color.Blue,
-           Color.Yellow, true, true);
+           Color.Yellow, true, true, CountWheels.Three, "cross", Color.Orange);
             car.SetPosition(rnd.Next(20, 100), rnd.Next(100, 100), pictureBoxSamosval.Width,
            pictureBoxSamosval.Height);
             Draw();

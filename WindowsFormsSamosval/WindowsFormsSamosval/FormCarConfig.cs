@@ -87,13 +87,14 @@ namespace WindowsFormsSamosval
             }
         }
 
+
         // Передаем информацию при нажатии на Label
+
         private void labelSamosval_MouseDown(object sender, MouseEventArgs e)
         {
             labelSamosval.DoDragDrop(labelSamosval.Text, DragDropEffects.Move |
            DragDropEffects.Copy);
         }
-
 
         // Передаем информацию при нажатии на Label
         private void labelSuperSamosval_MouseDown(object sender, MouseEventArgs e)

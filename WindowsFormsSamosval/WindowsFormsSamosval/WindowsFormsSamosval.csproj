@@ -55,6 +55,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CircleWheels.cs" />
+    <Compile Include="CountWheels.cs" />
+    <Compile Include="CrossWheels.cs" />
     <Compile Include="Direction.cs" />
     <Compile Include="Exception\ParkingAlreadyHaveException.cs" />
     <Compile Include="FormCarConfig.cs">
@@ -71,6 +74,7 @@
     </Compile>
     <Compile Include="ITransport.cs" />
     <Compile Include="MultiLevelParking.cs" />
+    <Compile Include="IWheels.cs" />
     <Compile Include="Parking.cs" />
     <Compile Include="Exception\ParkingNotFoundException.cs" />
     <Compile Include="Exception\ParkingOccupiedPlaceException.cs" />
@@ -84,6 +88,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SqWheels.cs" />
     <Compile Include="SuperSamosval.cs" />
     <Compile Include="Vehicle.cs" />
     <EmbeddedResource Include="FormCarConfig.resx">

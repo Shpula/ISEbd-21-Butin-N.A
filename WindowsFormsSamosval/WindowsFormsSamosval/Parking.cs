@@ -14,6 +14,7 @@ namespace WindowsFormsSamosval
     {
         private Dictionary<int, T> _places;
         private int _maxCount;
+        private Stack<T> removedCar;
         private int PictureWidth { get; set; }
         private int PictureHeight { get; set; }
         private const int _placeSizeWidth = 210;
@@ -23,10 +24,15 @@ namespace WindowsFormsSamosval
         public Parking(int sizes, int pictureWidth, int pictureHeight)
         {
             _maxCount = sizes;
-            _places = new Dictionary<int, T>();
+            removedCar = new Stack<T>();
             PictureWidth = pictureWidth;
             PictureHeight = pictureHeight;
+            for (int i = 0; i < _places.Count; i++)
+            {
+                _places[i] = null;
+            }
         }
+
 
         public static int operator +(Parking<T> p, T car)
         {
@@ -59,17 +65,22 @@ namespace WindowsFormsSamosval
         /// <param name="p">Парковка</param>
         /// <param name="index">Индекс места, с которого пытаемся извлечь
         /// <returns></returns>
-        public static T operator -(Parking<T> p, int index)
+        public static T operator -(Parking<T, E> p, int index)
         {
             if (!p.CheckFreePlace(index))
             {
                 T car = p._places[index];
+                p.removedCar.Push(car);
                 p._places.Remove(index);
                 return car;
             }
             throw new ParkingNotFoundException(index);
         }
 
+        public T GetCarByKey(int key)
+        {
+            return _places.ContainsKey(key) ? _places[key] : null;
+        }
         private bool CheckFreePlace(int index)
         {
             return !_places.ContainsKey(index);

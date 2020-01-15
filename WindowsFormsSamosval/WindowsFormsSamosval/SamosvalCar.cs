@@ -89,6 +89,7 @@ namespace WindowsFormsSamosval
         {
             return MaxSpeed + ";" + Weight + ";" + MainColor.Name;
         }
+
         public int CompareTo(SamosvalCar other)
         {
             if (other == null)
@@ -168,6 +169,11 @@ namespace WindowsFormsSamosval
         public override int GetHashCode()
         {
             return base.GetHashCode();
+        }
+
+        public override string ToString()
+        {
+            return MaxSpeed + ";" + Weight + ";" + MainColor;
         }
     }
 }
