@@ -7,24 +7,86 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsSamosval
 {
-   
-    public class Parking<T> where T : class, ITransport
+    /// <summary>
+    /// Параметризованны класс для хранения набора объектов от интерфейса ITransport
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
+    public class Parking<T, E> where T : class, ITransport where E : class, IWheels
     {
         private Dictionary<int, T> _places;
         private int _maxCount;
+        private Stack<T> removedCar;
         private int PictureWidth { get; set; }
         private int PictureHeight { get; set; }
         private const int _placeSizeWidth = 210;
         private const int _placeSizeHeight = 80;
+        /// <summary>
+        /// Конструктор
+        /// </summary>
+        /// 
+    
+        public static bool operator ==(Parking<T, E> p, int index)
+        {
+            if (index < 0 || index > p._places.Count || p.CheckFreePlace(index))
+            {
+                return false;
+            }
+
+            for (int i = 0; i < p._places.Count; i++)
+            {
+                if (p.CheckFreePlace(i) || i == index)
+                {
+                    continue;
+                }
+                if (p._places[i].ToString() == p._places[index].ToString())
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public static bool operator !=(Parking<T, E> p, int index)
+        {
+            if (index < 0 || index > p._places.Count || p.CheckFreePlace(index))
+            {
+                return false;
+            }
+
+            for (int i = 0; i < p._places.Count; i++)
+            {
+                if (p.CheckFreePlace(i) || i == index)
+                {
+                    continue;
+                }
+                if (p._places[i].ToString() == p._places[index].ToString())
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
         
         public Parking(int sizes, int pictureWidth, int pictureHeight)
         {
             _maxCount = sizes;
-            _places = new Dictionary<int, T>();
+            removedCar = new Stack<T>();
             PictureWidth = pictureWidth;
             PictureHeight = pictureHeight;
+            for (int i = 0; i < _places.Count; i++)
+            {
+                _places[i] = null;
+            }
         }
-        public static int operator +(Parking<T> p, T car)
+
+        /// <summary>
+        /// Перегрузка оператора сложения
+        /// Логика действия: на парковку добавляется автомобиль
+        /// </summary>
+        /// <param name="p">Парковка</param>
+        /// <param name="car">Добавляемый автомобиль</param>
+        /// <returns></returns>
+        public static int operator +(Parking<T, E> p, T car)
         {
             if (p._places.Count == p._maxCount)
             {
@@ -50,17 +112,22 @@ namespace WindowsFormsSamosval
         /// <param name="p">Парковка</param>
         /// <param name="index">Индекс места, с которого пытаемся извлечь
         /// <returns></returns>
-        public static T operator -(Parking<T> p, int index)
+        public static T operator -(Parking<T, E> p, int index)
         {
             if (!p.CheckFreePlace(index))
             {
                 T car = p._places[index];
+                p.removedCar.Push(car);
                 p._places.Remove(index);
                 return car;
             }
             return null;
         }
 
+        public T GetCarByKey(int key)
+        {
+            return _places.ContainsKey(key) ? _places[key] : null;
+        }
         private bool CheckFreePlace(int index)
         {
             return !_places.ContainsKey(index);

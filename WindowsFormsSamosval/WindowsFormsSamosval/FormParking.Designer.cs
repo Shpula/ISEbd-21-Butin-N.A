@@ -109,6 +109,7 @@
             this.labelPlace.Size = new System.Drawing.Size(61, 20);
             this.labelPlace.TabIndex = 6;
             this.labelPlace.Text = "Место:";
+
             // 
             // labelTakeCar
             // 
@@ -126,8 +127,6 @@
             this.buttonTakeCar.Size = new System.Drawing.Size(85, 31);
             this.buttonTakeCar.TabIndex = 4;
             this.buttonTakeCar.Text = "Забрать";
-            this.buttonTakeCar.UseVisualStyleBackColor = true;
-            this.buttonTakeCar.Click += new System.EventHandler(this.buttonTakeCar_Click);
             // 
             // listBoxLevels
             // 
