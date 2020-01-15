@@ -34,9 +34,10 @@
             this.TakeCarGroup = new System.Windows.Forms.GroupBox();
             this.pictureBoxTakeCar = new System.Windows.Forms.PictureBox();
             this.maskedTextBox = new System.Windows.Forms.MaskedTextBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.labelPlace = new System.Windows.Forms.Label();
             this.labelTakeCar = new System.Windows.Forms.Label();
             this.buttonTakeCar = new System.Windows.Forms.Button();
+            this.listBoxLevels = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxParking)).BeginInit();
             this.TakeCarGroup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTakeCar)).BeginInit();
@@ -53,7 +54,7 @@
             // 
             // buttonSetSamosval
             // 
-            this.buttonSetSamosval.Location = new System.Drawing.Point(958, 40);
+            this.buttonSetSamosval.Location = new System.Drawing.Point(1030, 208);
             this.buttonSetSamosval.Name = "buttonSetSamosval";
             this.buttonSetSamosval.Size = new System.Drawing.Size(127, 84);
             this.buttonSetSamosval.TabIndex = 1;
@@ -63,7 +64,7 @@
             // 
             // buttonSetSuperSamosval
             // 
-            this.buttonSetSuperSamosval.Location = new System.Drawing.Point(958, 166);
+            this.buttonSetSuperSamosval.Location = new System.Drawing.Point(872, 208);
             this.buttonSetSuperSamosval.Name = "buttonSetSuperSamosval";
             this.buttonSetSuperSamosval.Size = new System.Drawing.Size(127, 84);
             this.buttonSetSuperSamosval.TabIndex = 2;
@@ -75,7 +76,7 @@
             // 
             this.TakeCarGroup.Controls.Add(this.pictureBoxTakeCar);
             this.TakeCarGroup.Controls.Add(this.maskedTextBox);
-            this.TakeCarGroup.Controls.Add(this.label2);
+            this.TakeCarGroup.Controls.Add(this.labelPlace);
             this.TakeCarGroup.Controls.Add(this.labelTakeCar);
             this.TakeCarGroup.Controls.Add(this.buttonTakeCar);
             this.TakeCarGroup.Location = new System.Drawing.Point(845, 320);
@@ -100,14 +101,14 @@
             this.maskedTextBox.Size = new System.Drawing.Size(60, 26);
             this.maskedTextBox.TabIndex = 7;
             // 
-            // label2
+            // labelPlace
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(84, 70);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(61, 20);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Место:";
+            this.labelPlace.AutoSize = true;
+            this.labelPlace.Location = new System.Drawing.Point(84, 70);
+            this.labelPlace.Name = "labelPlace";
+            this.labelPlace.Size = new System.Drawing.Size(61, 20);
+            this.labelPlace.TabIndex = 6;
+            this.labelPlace.Text = "Место:";
             // 
             // labelTakeCar
             // 
@@ -128,11 +129,22 @@
             this.buttonTakeCar.UseVisualStyleBackColor = true;
             this.buttonTakeCar.Click += new System.EventHandler(this.buttonTakeCar_Click);
             // 
+            // listBoxLevels
+            // 
+            this.listBoxLevels.FormattingEnabled = true;
+            this.listBoxLevels.ItemHeight = 20;
+            this.listBoxLevels.Location = new System.Drawing.Point(872, 13);
+            this.listBoxLevels.Name = "listBoxLevels";
+            this.listBoxLevels.Size = new System.Drawing.Size(285, 164);
+            this.listBoxLevels.TabIndex = 4;
+            this.listBoxLevels.SelectedIndexChanged += new System.EventHandler(this.listBox_SelectedIndexChanged);
+            // 
             // FormParking
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1178, 744);
+            this.Controls.Add(this.listBoxLevels);
             this.Controls.Add(this.TakeCarGroup);
             this.Controls.Add(this.buttonSetSuperSamosval);
             this.Controls.Add(this.buttonSetSamosval);
@@ -157,6 +169,7 @@
         private System.Windows.Forms.Button buttonTakeCar;
         private System.Windows.Forms.PictureBox pictureBoxTakeCar;
         private System.Windows.Forms.MaskedTextBox maskedTextBox;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label labelPlace;
+        private System.Windows.Forms.ListBox listBoxLevels;
     }
 }

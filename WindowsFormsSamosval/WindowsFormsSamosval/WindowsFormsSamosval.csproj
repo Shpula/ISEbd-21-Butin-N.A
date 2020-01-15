@@ -54,6 +54,7 @@
       <DependentUpon>FormParking.cs</DependentUpon>
     </Compile>
     <Compile Include="ITransport.cs" />
+    <Compile Include="MultiLevelParking.cs" />
     <Compile Include="Parking.cs" />
     <Compile Include="SamosvalCar.cs" />
     <Compile Include="SamosvalForm.cs">
