@@ -28,8 +28,6 @@ namespace WindowsFormsSamosval
             Pen pen = new Pen(Color.Black);
             Brush dopBrush = new SolidBrush(DopColor);
             Brush mainBrush = new SolidBrush(MainColor);
-
-
             base.DrawCar(g);
 
             if (MainPipe)
@@ -39,8 +37,13 @@ namespace WindowsFormsSamosval
 
             if (Container)
             {
-                g.FillRectangle(mainBrush, _startPosX - 5, _startPosY - 50 + 40, 60, 40);
+                g.FillRectangle(dopBrush, _startPosX - 5, _startPosY - 50 + 50, 60, 40);
             }
+        }
+
+        public void SetDopColor(Color color)
+        {
+            DopColor = color;
         }
     }
 }
