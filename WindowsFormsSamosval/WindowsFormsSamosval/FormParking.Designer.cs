@@ -160,14 +160,14 @@
             this.загрузитьToolStripMenuItem.Text = "Загрузить";
             this.загрузитьToolStripMenuItem.Click += new System.EventHandler(this.загрузитьToolStripMenuItem_Click);
             // 
-            // saveFileDialog
+            // saveFileParking
             // 
-            this.saveFileDialog.Filter = "txt file | *.txt";
+            this.saveFileParking.Filter = "txt file | *.txt";
             // 
-            // openFileDialog
+            // openFileParking
             // 
-            this.openFileDialog.FileName = "openFileDialog";
-            this.openFileDialog.Filter = "txt file | *.txt";
+            this.openFileParking.FileName = "openFileDialog";
+            this.openFileParking.Filter = "txt file | *.txt";
             // 
             // buttonSort
             // 
