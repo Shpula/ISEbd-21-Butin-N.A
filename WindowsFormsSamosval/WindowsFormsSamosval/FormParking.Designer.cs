@@ -33,9 +33,9 @@
             this.buttonSetSuperSamosval = new System.Windows.Forms.Button();
             this.TakeCarGroup = new System.Windows.Forms.GroupBox();
             this.pictureBoxTakeCar = new System.Windows.Forms.PictureBox();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.maskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.labelTakeCar = new System.Windows.Forms.Label();
             this.buttonTakeCar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxParking)).BeginInit();
             this.TakeCarGroup.SuspendLayout();
@@ -74,16 +74,16 @@
             // TakeCarGroup
             // 
             this.TakeCarGroup.Controls.Add(this.pictureBoxTakeCar);
-            this.TakeCarGroup.Controls.Add(this.maskedTextBox1);
+            this.TakeCarGroup.Controls.Add(this.maskedTextBox);
             this.TakeCarGroup.Controls.Add(this.label2);
-            this.TakeCarGroup.Controls.Add(this.label1);
+            this.TakeCarGroup.Controls.Add(this.labelTakeCar);
             this.TakeCarGroup.Controls.Add(this.buttonTakeCar);
             this.TakeCarGroup.Location = new System.Drawing.Point(845, 320);
             this.TakeCarGroup.Name = "TakeCarGroup";
             this.TakeCarGroup.Size = new System.Drawing.Size(330, 424);
             this.TakeCarGroup.TabIndex = 3;
             this.TakeCarGroup.TabStop = false;
-            this.TakeCarGroup.Text = "TakeCarGroup";
+            this.TakeCarGroup.Text = "Забрать машину";
             // 
             // pictureBoxTakeCar
             // 
@@ -93,30 +93,30 @@
             this.pictureBoxTakeCar.TabIndex = 8;
             this.pictureBoxTakeCar.TabStop = false;
             // 
-            // maskedTextBox1
+            // maskedTextBox
             // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(160, 67);
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(60, 26);
-            this.maskedTextBox1.TabIndex = 7;
+            this.maskedTextBox.Location = new System.Drawing.Point(160, 67);
+            this.maskedTextBox.Name = "maskedTextBox";
+            this.maskedTextBox.Size = new System.Drawing.Size(60, 26);
+            this.maskedTextBox.TabIndex = 7;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(84, 70);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(70, 20);
+            this.label2.Size = new System.Drawing.Size(61, 20);
             this.label2.TabIndex = 6;
-            this.label2.Text = "Местро:";
+            this.label2.Text = "Место:";
             // 
-            // label1
+            // labelTakeCar
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(84, 31);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(136, 20);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Забрать машину";
+            this.labelTakeCar.AutoSize = true;
+            this.labelTakeCar.Location = new System.Drawing.Point(84, 31);
+            this.labelTakeCar.Name = "labelTakeCar";
+            this.labelTakeCar.Size = new System.Drawing.Size(136, 20);
+            this.labelTakeCar.TabIndex = 5;
+            this.labelTakeCar.Text = "Забрать машину";
             // 
             // buttonTakeCar
             // 
@@ -153,10 +153,10 @@
         private System.Windows.Forms.Button buttonSetSamosval;
         private System.Windows.Forms.Button buttonSetSuperSamosval;
         private System.Windows.Forms.GroupBox TakeCarGroup;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelTakeCar;
         private System.Windows.Forms.Button buttonTakeCar;
         private System.Windows.Forms.PictureBox pictureBoxTakeCar;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox;
         private System.Windows.Forms.Label label2;
     }
 }
