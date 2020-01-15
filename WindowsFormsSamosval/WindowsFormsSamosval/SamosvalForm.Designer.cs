@@ -110,7 +110,6 @@
             this.buttonCreateSuperSamosval.Text = "Начать круто самосвалить";
             this.buttonCreateSuperSamosval.UseVisualStyleBackColor = true;
             this.buttonCreateSuperSamosval.Click += new System.EventHandler(this.buttonCreateSuperSamosval_Click);
-
             // 
             // SamosvalForm
             // 

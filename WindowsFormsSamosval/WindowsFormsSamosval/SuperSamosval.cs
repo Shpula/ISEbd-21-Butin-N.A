@@ -10,13 +10,15 @@ namespace WindowsFormsSamosval
     class SuperSamosval : SamosvalCar
     {
         public Color DopColor { private set; get; }
+        public Color MainColor { private set; get; }
         public bool MainPipe { private set; get; }
         public bool Container { private set; get; }
 
         public SuperSamosval(int maxSpeed, float weight, Color mainColor, Color dopColor,
        bool mainPipe, bool container) :
-        base(maxSpeed, weight, mainColor)
+        base(maxSpeed, weight, mainColor, dopColor)
         {
+            MainColor = mainColor;
             DopColor = dopColor;
             MainPipe = mainPipe;
             Container = container;
@@ -25,19 +27,19 @@ namespace WindowsFormsSamosval
         {
             Pen pen = new Pen(Color.Black);
             Brush dopBrush = new SolidBrush(DopColor);
-            Brush brush = new SolidBrush(Color.Black);
-            Brush brush1 = new SolidBrush(Color.Orange);
+            Brush mainBrush = new SolidBrush(MainColor);
+
 
             base.DrawCar(g);
 
             if (MainPipe)
             {
-                g.FillRectangle(brush, _startPosX + 63, _startPosY - 60, 5, 35);
+                g.FillRectangle(dopBrush, _startPosX + 63, _startPosY - 60 + 40, 5, 35);
             }
 
             if (Container)
             {
-                g.FillRectangle(brush1, _startPosX - 5, _startPosY - 50, 60, 40);
+                g.FillRectangle(mainBrush, _startPosX - 5, _startPosY - 50 + 40, 60, 40);
             }
         }
     }

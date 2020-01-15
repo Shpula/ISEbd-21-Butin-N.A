@@ -15,11 +15,12 @@ namespace WindowsFormsSamosval
         public bool MainPipe { private set; get; }
         public bool Container { private set; get; }
    
-        public SamosvalCar(int maxSpeed, float weight, Color mainColor)
+        public SamosvalCar(int maxSpeed, float weight, Color mainColor, Color dopColor)
         {
             MaxSpeed = maxSpeed;
             Weight = weight;
             MainColor = mainColor;
+            DopColor = dopColor;
         }
 
         public override void MoveTransport(Direction direction)
@@ -60,24 +61,24 @@ namespace WindowsFormsSamosval
         public override void DrawCar(Graphics g)
         {
             Pen pen = new Pen(Color.Black);
-            Brush brush = new SolidBrush(Color.Black);
-            Brush brush1 = new SolidBrush(Color.Orange);
-
+            Brush dopBrush = new SolidBrush(DopColor);
+            Brush mainBrush = new SolidBrush(MainColor);
             //Колёса
-            g.FillEllipse(brush, _startPosX, _startPosY, 20, 20);
-            g.FillEllipse(brush, _startPosX + 30, _startPosY, 20, 20);
-            g.FillEllipse(brush, _startPosX + 60, _startPosY, 20, 20);
-            g.FillEllipse(brush, _startPosX + 90, _startPosY, 20, 20);
+            g.FillEllipse(dopBrush, _startPosX, _startPosY + 40, 20, 20);
+            g.FillEllipse(dopBrush, _startPosX + 30, _startPosY + 40, 20, 20);
+            g.FillEllipse(dopBrush, _startPosX + 60, _startPosY + 40, 20, 20);
+            g.FillEllipse(dopBrush, _startPosX + 90, _startPosY + 40, 20, 20);
             //Кузов
-            g.FillRectangle(brush1, _startPosX, _startPosY - 15, 115, 15);
-            g.FillRectangle(brush1, _startPosX + 65, _startPosY - 50, 30, 50);
-            g.FillRectangle(brush1, _startPosX + 65, _startPosY - 30, 50, 30);
+            g.FillRectangle(mainBrush, _startPosX, _startPosY - 15 + 40, 115, 15);
+            g.FillRectangle(mainBrush, _startPosX + 65, _startPosY - 50 + 40, 30, 50);
+            g.FillRectangle(mainBrush, _startPosX + 65, _startPosY - 30 + 40, 50, 30);
             //Стекло
-            g.FillRectangle(brush, _startPosX + 85, _startPosY - 45, 10, 15);
+            g.FillRectangle(dopBrush, _startPosX + 85, _startPosY - 45 + 40 ,10, 15);
+            g.FillRectangle(dopBrush, _startPosX + 85, _startPosY - 45, 10, 15);
             //Контейнер
-            g.FillRectangle(brush1, _startPosX - 5, _startPosY - 50, 60, 40);
+            g.FillRectangle(dopBrush, _startPosX - 5, _startPosY - 50, 60, 40);
             //Труба 
-            g.FillRectangle(brush, _startPosX + 63, _startPosY - 60, 5, 35  );
+            g.FillRectangle(dopBrush, _startPosX + 63, _startPosY - 60, 5, 35  );
         }
     }
 }
