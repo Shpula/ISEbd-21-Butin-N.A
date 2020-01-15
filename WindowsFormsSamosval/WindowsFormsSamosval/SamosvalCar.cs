@@ -14,7 +14,7 @@ namespace WindowsFormsSamosval
         public Color DopColor { private set; get; }
         public bool MainPipe { private set; get; }
         public bool Container { private set; get; }
-   
+
         public SamosvalCar(int maxSpeed, float weight, Color mainColor, Color dopColor)
         {
             MaxSpeed = maxSpeed;
@@ -73,6 +73,7 @@ namespace WindowsFormsSamosval
             g.FillRectangle(mainBrush, _startPosX + 65, _startPosY - 50 + 40, 30, 50);
             g.FillRectangle(mainBrush, _startPosX + 65, _startPosY - 30 + 40, 50, 30);
             //Стекло
+
             g.FillRectangle(dopBrush, _startPosX + 85, _startPosY - 45 + 40 ,10, 15);
             g.FillRectangle(brush, _startPosX + 85, _startPosY - 45, 10, 15);
             //Контейнер

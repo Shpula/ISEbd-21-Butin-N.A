@@ -61,7 +61,7 @@ namespace WindowsFormsSamosval
         {
             if (listBoxLevels.SelectedIndex > -1)
             {
-            ColorDialog dialog = new ColorDialog();
+                ColorDialog dialog = new ColorDialog();
                 if (dialog.ShowDialog() == DialogResult.OK)
                 {
                     ColorDialog dialogDop = new ColorDialog();

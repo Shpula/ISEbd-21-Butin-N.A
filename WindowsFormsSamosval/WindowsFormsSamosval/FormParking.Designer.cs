@@ -156,6 +156,7 @@
             this.TakeCarGroup.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTakeCar)).EndInit();
             this.ResumeLayout(false);
+
         }
 
         #endregion
