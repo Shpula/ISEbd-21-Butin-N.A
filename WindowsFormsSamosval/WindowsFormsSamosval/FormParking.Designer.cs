@@ -126,6 +126,8 @@
             this.buttonTakeCar.Size = new System.Drawing.Size(85, 31);
             this.buttonTakeCar.TabIndex = 4;
             this.buttonTakeCar.Text = "Забрать";
+            this.buttonTakeCar.UseVisualStyleBackColor = true;
+            this.buttonTakeCar.Click += new System.EventHandler(this.buttonTakeCar_Click);
             // 
             // listBoxLevels
             // 
@@ -154,6 +156,7 @@
             this.TakeCarGroup.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTakeCar)).EndInit();
             this.ResumeLayout(false);
+
         }
 
         #endregion
