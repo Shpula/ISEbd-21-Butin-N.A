@@ -72,7 +72,6 @@ namespace WindowsFormsSamosval
             Pen pen = new Pen(Color.Black);
             Brush dopBrush = new SolidBrush(Color.Black);
             Brush mainBrush = new SolidBrush(MainColor);
-
             //Колёса
             g.FillEllipse(dopBrush, _startPosX, _startPosY + 50, 20, 20);
             g.FillEllipse(dopBrush, _startPosX + 30, _startPosY + 50, 20, 20);

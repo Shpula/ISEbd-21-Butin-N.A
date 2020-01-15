@@ -22,6 +22,7 @@ namespace WindowsFormsSamosval
         /// Сколько мест на каждом уровне
         /// </summary>
         private const int countPlaces = 15;
+
         /// <summary>
         /// Конструктор
         /// </summary>

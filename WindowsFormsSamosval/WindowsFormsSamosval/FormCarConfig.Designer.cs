@@ -258,7 +258,7 @@
             this.Controls.Add(this.panelCar);
             this.Controls.Add(this.groupBoxType);
             this.Name = "FormCarConfig";
-            this.Text = "Выбор машины";
+            this.Text = "Выбор транспорта";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCar)).EndInit();
             this.groupBoxType.ResumeLayout(false);
             this.panelCar.ResumeLayout(false);

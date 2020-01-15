@@ -8,6 +8,7 @@ namespace WindowsFormsSamosval
     {
         ITransport car = null;
         private event carDelegate eventAddCar;
+
         public FormCarConfig()
         {
             InitializeComponent();
@@ -87,14 +88,13 @@ namespace WindowsFormsSamosval
         }
 
         // Передаем информацию при нажатии на Label
-
         private void labelSamosval_MouseDown(object sender, MouseEventArgs e)
         {
             labelSamosval.DoDragDrop(labelSamosval.Text, DragDropEffects.Move |
            DragDropEffects.Copy);
         }
-        // Передаем информацию при нажатии на Label
 
+        // Передаем информацию при нажатии на Label
         private void labelSuperSamosval_MouseDown(object sender, MouseEventArgs e)
         {
             labelSuperSamosval.DoDragDrop(labelSuperSamosval.Text, DragDropEffects.Move |
@@ -102,7 +102,6 @@ namespace WindowsFormsSamosval
         }
 
         // Проверка получаемой информации (ее типа на соответствие требуемому)
-
         private void panelCar_DragEnter(object sender, DragEventArgs e)
         {
             if (e.Data.GetDataPresent(DataFormats.Text))
@@ -116,7 +115,6 @@ namespace WindowsFormsSamosval
         }
 
         // Действия при приеме перетаскиваемой информации
-
         private void panelCar_DragDrop(object sender, DragEventArgs e)
         {
             switch (e.Data.GetData(DataFormats.Text).ToString())
