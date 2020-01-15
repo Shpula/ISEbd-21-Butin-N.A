@@ -33,6 +33,9 @@
             this.pictureBoxTakeCar = new System.Windows.Forms.PictureBox();
             this.maskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.labelPlace = new System.Windows.Forms.Label();
+            this.buttonSetSamosval = new System.Windows.Forms.Button();
+            this.buttonSetSuperSamosval = new System.Windows.Forms.Button();
+            this.labelTakeCar = new System.Windows.Forms.Label();
             this.buttonTakeCar = new System.Windows.Forms.Button();
             this.listBoxLevels = new System.Windows.Forms.ListBox();
             this.buttonSetCar = new System.Windows.Forms.Button();
@@ -62,6 +65,26 @@
             this.groupBoxTakeCar.TabIndex = 3;
             this.groupBoxTakeCar.TabStop = false;
             this.groupBoxTakeCar.Text = "Забрать машину";
+            //
+            // buttonSetSamosval
+            // 
+            this.buttonSetSamosval.Location = new System.Drawing.Point(1030, 208);
+            this.buttonSetSamosval.Name = "buttonSetSamosval";
+            this.buttonSetSamosval.Size = new System.Drawing.Size(127, 84);
+            this.buttonSetSamosval.TabIndex = 1;
+            this.buttonSetSamosval.Text = "Припарковать самосвал";
+            this.buttonSetSamosval.UseVisualStyleBackColor = true;
+            this.buttonSetSamosval.Click += new System.EventHandler(this.buttonSetSamosval_Click);
+            // 
+            // buttonSetSuperSamosval
+            // 
+            this.buttonSetSuperSamosval.Location = new System.Drawing.Point(872, 208);
+            this.buttonSetSuperSamosval.Name = "buttonSetSuperSamosval";
+            this.buttonSetSuperSamosval.Size = new System.Drawing.Size(127, 84);
+            this.buttonSetSuperSamosval.TabIndex = 2;
+            this.buttonSetSuperSamosval.Text = "Припарковать супер самосвал";
+            this.buttonSetSuperSamosval.UseVisualStyleBackColor = true;
+            this.buttonSetSuperSamosval.Click += new System.EventHandler(this.buttonSetSuperSamosval_Click);
             // 
             // pictureBoxTakeCar
             // 
@@ -81,11 +104,20 @@
             // labelPlace
             // 
             this.labelPlace.AutoSize = true;
-            this.labelPlace.Location = new System.Drawing.Point(84, 47);
+            this.labelPlace.Location = new System.Drawing.Point(84, 70);
             this.labelPlace.Name = "labelPlace";
             this.labelPlace.Size = new System.Drawing.Size(61, 20);
             this.labelPlace.TabIndex = 6;
             this.labelPlace.Text = "Место:";
+            // 
+            // labelTakeCar
+            // 
+            this.labelTakeCar.AutoSize = true;
+            this.labelTakeCar.Location = new System.Drawing.Point(84, 31);
+            this.labelTakeCar.Name = "labelTakeCar";
+            this.labelTakeCar.Size = new System.Drawing.Size(136, 20);
+            this.labelTakeCar.TabIndex = 5;
+            this.labelTakeCar.Text = "Забрать машину";
             // 
             // buttonTakeCar
             // 
@@ -94,8 +126,6 @@
             this.buttonTakeCar.Size = new System.Drawing.Size(85, 31);
             this.buttonTakeCar.TabIndex = 4;
             this.buttonTakeCar.Text = "Забрать";
-            this.buttonTakeCar.UseVisualStyleBackColor = true;
-            this.buttonTakeCar.Click += new System.EventHandler(this.buttonTakeCar_Click);
             // 
             // listBoxLevels
             // 
@@ -125,6 +155,8 @@
             this.Controls.Add(this.buttonSetCar);
             this.Controls.Add(this.listBoxLevels);
             this.Controls.Add(this.groupBoxTakeCar);
+            this.Controls.Add(this.buttonSetSuperSamosval);
+            this.Controls.Add(this.buttonSetSamosval);
             this.Controls.Add(this.pictureBoxParking);
             this.Name = "FormParking";
             this.Text = "Парковка";
@@ -133,13 +165,15 @@
             this.groupBoxTakeCar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTakeCar)).EndInit();
             this.ResumeLayout(false);
-
         }
 
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBoxParking;
         private System.Windows.Forms.GroupBox groupBoxTakeCar;
+        private System.Windows.Forms.Button buttonSetSamosval;
+        private System.Windows.Forms.Button buttonSetSuperSamosval;
+        private System.Windows.Forms.Label labelTakeCar;
         private System.Windows.Forms.Button buttonTakeCar;
         private System.Windows.Forms.PictureBox pictureBoxTakeCar;
         private System.Windows.Forms.MaskedTextBox maskedTextBox;

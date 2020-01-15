@@ -81,5 +81,10 @@ namespace WindowsFormsSamosval
             //Труба 
             g.FillRectangle(dopBrush, _startPosX + 63, _startPosY - 60, 5, 35  );
         }
+
+        public override string ToString()
+        {
+            return MaxSpeed + ";" + Weight + ";" + MainColor;
+        }
     }
 }
