@@ -25,7 +25,6 @@ namespace WindowsFormsSamosval
             car.DrawCar(gr);
             pictureBoxSamosval.Image = bmp;
         }
-
         private void buttonStart_Click(object sender, EventArgs e)
         {
             Random rnd = new Random();
@@ -35,7 +34,6 @@ namespace WindowsFormsSamosval
            pictureBoxSamosval.Height);
             Draw();
         }
-
         private void buttonMove_Click(object sender, EventArgs e)
         {
             //получаем имя кнопки
