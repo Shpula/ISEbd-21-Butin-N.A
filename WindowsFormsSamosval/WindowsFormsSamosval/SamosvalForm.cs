@@ -13,7 +13,6 @@ namespace WindowsFormsSamosval
     public partial class SamosvalForm : Form
     {
         private SamosvalCar car;
-
         public SamosvalForm()
         {
             InitializeComponent();

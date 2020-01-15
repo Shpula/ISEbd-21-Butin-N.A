@@ -213,7 +213,7 @@ namespace WindowsFormsSamosval
                 }
             }
         }
-
+        
         private void buttonSort_Click(object sender, EventArgs e)
         {
             parking.Sort();

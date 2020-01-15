@@ -39,8 +39,6 @@ namespace WindowsFormsSamosval
         public override void DrawCar(Graphics g)
         {
             Brush dopBrush = new SolidBrush(DopColor);
-            Brush mainBrush = new SolidBrush(MainColor);
-
             base.DrawCar(g);
 
             if (MainPipe)
@@ -49,11 +47,11 @@ namespace WindowsFormsSamosval
             }
             if (Container)
             {
-                g.FillRectangle(dopBrush, _startPosX - 5, _startPosY - 50 + 40, 60, 40);
+                g.FillRectangle(dopBrush, _startPosX - 5, _startPosY - 50 + 50, 60, 40);
             }
         }
-        
-          public void SetDopColor(Color color)
+
+        public void SetDopColor(Color color)
         {
             DopColor = color;
         }
