@@ -32,7 +32,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.pictureBoxTakeCar = new System.Windows.Forms.PictureBox();
             this.maskedTextBox = new System.Windows.Forms.MaskedTextBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.labelPlace = new System.Windows.Forms.Label();
             this.buttonTakeCar = new System.Windows.Forms.Button();
             this.listBoxLevels = new System.Windows.Forms.ListBox();
             this.buttonSetCar = new System.Windows.Forms.Button();
@@ -61,7 +61,7 @@
             // 
             this.groupBox1.Controls.Add(this.pictureBoxTakeCar);
             this.groupBox1.Controls.Add(this.maskedTextBox);
-            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.labelPlace);
             this.groupBox1.Controls.Add(this.buttonTakeCar);
             this.groupBox1.Location = new System.Drawing.Point(845, 320);
             this.groupBox1.Name = "groupBox1";
@@ -85,14 +85,14 @@
             this.maskedTextBox.Size = new System.Drawing.Size(60, 26);
             this.maskedTextBox.TabIndex = 7;
             // 
-            // label2
+            // labelPlace
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(84, 47);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(61, 20);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Место:";
+            this.labelPlace.AutoSize = true;
+            this.labelPlace.Location = new System.Drawing.Point(84, 47);
+            this.labelPlace.Name = "labelPlace";
+            this.labelPlace.Size = new System.Drawing.Size(61, 20);
+            this.labelPlace.TabIndex = 6;
+            this.labelPlace.Text = "Место:";
             // 
             // buttonTakeCar
             // 
@@ -148,14 +148,14 @@
             // сохранитьToolStripMenuItem
             // 
             this.сохранитьToolStripMenuItem.Name = "сохранитьToolStripMenuItem";
-            this.сохранитьToolStripMenuItem.Size = new System.Drawing.Size(200, 34);
+            this.сохранитьToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.сохранитьToolStripMenuItem.Text = "Сохранить";
             this.сохранитьToolStripMenuItem.Click += new System.EventHandler(this.сохранитьToolStripMenuItem_Click);
             // 
             // загрузитьToolStripMenuItem
             // 
             this.загрузитьToolStripMenuItem.Name = "загрузитьToolStripMenuItem";
-            this.загрузитьToolStripMenuItem.Size = new System.Drawing.Size(200, 34);
+            this.загрузитьToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.загрузитьToolStripMenuItem.Text = "Загрузить";
             this.загрузитьToolStripMenuItem.Click += new System.EventHandler(this.загрузитьToolStripMenuItem_Click);
             // 
@@ -199,7 +199,7 @@
         private System.Windows.Forms.Button buttonTakeCar;
         private System.Windows.Forms.PictureBox pictureBoxTakeCar;
         private System.Windows.Forms.MaskedTextBox maskedTextBox;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label labelPlace;
         private System.Windows.Forms.ListBox listBoxLevels;
         private System.Windows.Forms.Button buttonSetCar;
         private System.Windows.Forms.MenuStrip menuStrip;
