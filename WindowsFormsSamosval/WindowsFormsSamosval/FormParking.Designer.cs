@@ -127,7 +127,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.pictureBoxParking);
             this.Name = "FormParking";
-            this.Text = "FormParking";
+            this.Text = "Парковка";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxParking)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
