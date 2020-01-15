@@ -109,7 +109,6 @@
             this.labelPlace.Size = new System.Drawing.Size(61, 20);
             this.labelPlace.TabIndex = 6;
             this.labelPlace.Text = "Место:";
-
             // 
             // labelTakeCar
             // 
@@ -155,7 +154,6 @@
             this.TakeCarGroup.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTakeCar)).EndInit();
             this.ResumeLayout(false);
-
         }
 
         #endregion

@@ -90,6 +90,19 @@ namespace WindowsFormsSamosval
             {
                 if (maskedTextBox.Text != "")
                 {
+                var car = parking - Convert.ToInt32(maskedTextBox.Text);
+                if (car != null)
+                {
+                    Bitmap bmp = new Bitmap(pictureBoxTakeCar.Width,
+                   pictureBoxTakeCar.Height);
+                    Graphics gr = Graphics.FromImage(bmp);
+                    car.SetPosition(30, 30, pictureBoxTakeCar.Width,
+                   pictureBoxTakeCar.Height);
+                    car.DrawCar(gr);
+                    pictureBoxTakeCar.Image = bmp;
+                }
+                else
+                {
                     var car = parkings[listBoxLevels.SelectedIndex] -
                    Convert.ToInt32(maskedTextBox.Text);
                     if (car != null)
